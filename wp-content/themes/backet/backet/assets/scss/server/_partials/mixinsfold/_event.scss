@@ -1,0 +1,128 @@
+.event-block {
+    margin-top: 20px;
+    cursor: pointer;
+
+    .litle-news-block{
+        height: 150px;
+    }
+}
+
+.mouse-hover-class-event{
+    width: 100%; 
+    // margin-top: 25px; 
+    height: 100%; 
+    background-position: center center; 
+    background-size: cover; 
+    filter: brightness(90%);
+}
+
+.gradient-hover-id{
+    width: 100%; 
+    height: 100%;
+    background-image: -moz-linear-gradient( 0deg, rgb(32,163,217) 0%, rgb(235,23,139) 100%);
+    background-image: -webkit-linear-gradient( 0deg, rgb(32,163,217) 0%, rgb(235,23,139) 100%);
+    background-image: -ms-linear-gradient( 0deg, rgb(32,163,217) 0%, rgb(235,23,139) 100%);
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.gradient-hover-event{
+	background-image: -moz-linear-gradient( 0deg, rgb(32,163,217) 0%, rgb(235,23,139) 100%);
+	background-image: -webkit-linear-gradient( 0deg, rgb(32,163,217) 0%, rgb(235,23,139) 100%);
+	background-image: -ms-linear-gradient( 0deg, rgb(32,163,217) 0%, rgb(235,23,139) 100%);
+    opacity: 0.6;
+    position: absolute;
+	left: 0px;
+    top: 0px;
+    opacity:0; /*Элемент полностью прозрачный (невидимый)*/
+    transition: 1s; /*Скорость перехода состояния элемента*/
+    width: 100%; 
+    height: 100%;
+	// width: auto;
+	// height: 300px;
+      
+}
+
+.block-img {
+    width: 200px;
+    float: left;
+    
+    img {
+        width: 100%;
+    }
+}
+
+.event-description {
+    padding-top: 10px;
+}
+
+.date-event-block {
+    padding-top: 23px;
+    padding-left: 40px;
+}
+
+.date-event-day {
+    font-size: 40px;
+    font-family: "IBM Plex Sans";
+    color: rgb(17, 17, 17);
+    line-height: 0.72;
+}
+
+.date-event-month{
+    font-size: 16px;
+    font-family: "IBM Plex Sans";
+    color: rgb(17, 17, 17);
+    line-height: 1.8;
+    text-transform: lowercase;
+    padding-left: 0;      
+}
+
+
+
+.place-event {
+    font-size: 14px !important;
+    font-family: "IBM Plex Sans";
+    color: rgb(170, 170, 170);
+    line-height: 1.8;
+    // text-transform: lowercase;
+    padding-left: 0;
+}
+
+.date-media-day {
+    font-size: 40px;
+    font-family: "IBM Plex Sans";
+    color: white;
+    line-height: 0.72;
+}
+
+.date-media-month{
+    font-size: 16px;
+    font-family: "IBM Plex Sans";
+    color: white;
+    line-height: 1.8;
+    text-transform: lowercase;
+}
+
+.date-media-time {
+    font-size: 12px;
+    font-family: "IBM Plex Sans";
+    color: white;
+    text-transform: uppercase;
+    line-height: 1.2;
+    position: relative;
+    left: -3px;
+}
+
+.font-event-title {
+    font-size: 22px;
+    font-family: "IBM Plex Sans";
+    color: rgb(17, 17, 17);
+}
+
+.font-media-title {
+    font-size: 20px;
+    font-family: "IBM Plex Sans";
+    color: white;
+}

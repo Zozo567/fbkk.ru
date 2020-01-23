@@ -1,0 +1,18 @@
+@import "compass";
+@import "compass/reset";
+
+
+//include partials files
+@import "_partials/mixinsfold/mixins";
+@import "_partials/mixinsfold/main";
+@import "_partials/mixinsfold/header";
+@import "_partials/mixinsfold/footer";
+@import "_partials/mixinsfold/news";
+@import "_partials/mixinsfold/federation";
+@import "_partials/mixinsfold/competition";
+@import "_partials/mixinsfold/main-page";
+@import "_partials/mixinsfold/event";
+@import "_partials/mixinsfold/projects";
+@import "_partials/mixinsfold/media-screen";
+@import "_partials/variables";
+@import "_partials/typography";

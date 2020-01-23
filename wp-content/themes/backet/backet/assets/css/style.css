@@ -1,0 +1,1815 @@
+@charset "UTF-8";
+/* line 5, ../../../../../../../../../../../var/lib/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* line 22, ../../../../../../../../../../../var/lib/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1; }
+
+/* line 24, ../../../../../../../../../../../var/lib/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 26, ../../../../../../../../../../../var/lib/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 28, ../../../../../../../../../../../var/lib/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+/* line 30, ../../../../../../../../../../../var/lib/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none; }
+  /* line 103, ../../../../../../../../../../../var/lib/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+/* line 32, ../../../../../../../../../../../var/lib/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none; }
+
+/* line 116, ../../../../../../../../../../../var/lib/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/* mixins.scss */
+/* line 1, ../scss/server/_partials/mixinsfold/_main.scss */
+html {
+  position: relative;
+  min-height: 100%; }
+
+/* line 6, ../scss/server/_partials/mixinsfold/_main.scss */
+body {
+  background-image: -moz-linear-gradient(90deg, white 0%, #e9e7e8 100%);
+  background-image: -webkit-linear-gradient(90deg, white 0%, #e9e7e8 100%);
+  background-image: -ms-linear-gradient(90deg, white 0%, #e9e7e8 100%);
+  margin-bottom: 361px;
+  font-family: "IBM Plex Sans" !important; }
+
+/* line 14, ../scss/server/_partials/mixinsfold/_main.scss */
+li {
+  list-style-type: none; }
+
+/* line 18, ../scss/server/_partials/mixinsfold/_main.scss */
+.main_block {
+  height: auto; }
+
+/* line 22, ../scss/server/_partials/mixinsfold/_main.scss */
+.top_block {
+  height: 90px; }
+
+/* line 26, ../scss/server/_partials/mixinsfold/_main.scss */
+.navbar-dark .navbar-nav .nav-link {
+  color: black !important; }
+
+/* line 30, ../scss/server/_partials/mixinsfold/_main.scss */
+.navbar-dark .navbar-nav .nav-link.active {
+  color: blue !important; }
+
+/* line 34, ../scss/server/_partials/mixinsfold/_main.scss */
+.navbar-dark .navbar-toggler {
+  color: black !important; }
+
+/* line 38, ../scss/server/_partials/mixinsfold/_main.scss */
+.navbar-dark .navbar-brand {
+  color: black !important; }
+
+/* line 42, ../scss/server/_partials/mixinsfold/_main.scss */
+.navbar-brand img {
+  display: inline-block; }
+
+/* line 46, ../scss/server/_partials/mixinsfold/_main.scss */
+.navbar-brand ul {
+  display: inline-block; }
+
+/* line 50, ../scss/server/_partials/mixinsfold/_main.scss */
+.left {
+  float: left; }
+
+/* line 54, ../scss/server/_partials/mixinsfold/_main.scss */
+.right {
+  float: right; }
+
+/* line 58, ../scss/server/_partials/mixinsfold/_main.scss */
+.col-main-block {
+  padding-left: 0px !important;
+  padding-right: 0px !important; }
+
+/* line 63, ../scss/server/_partials/mixinsfold/_main.scss */
+.row-main-block {
+  margin-left: 0px !important;
+  margin-right: 0px !important; }
+
+/* line 67, ../scss/server/_partials/mixinsfold/_main.scss */
+.content {
+  margin-bottom: 20px;
+  font-family: "IBM Plex Sans";
+  font-size: 18px;
+  color: #555555;
+  line-height: 1.556;
+  text-align: left; }
+  /* line 79, ../scss/server/_partials/mixinsfold/_main.scss */
+  .content p {
+    font-size: 18px;
+    color: #555555; }
+    /* line 83, ../scss/server/_partials/mixinsfold/_main.scss */
+    .content p b {
+      color: black; }
+    /* line 87, ../scss/server/_partials/mixinsfold/_main.scss */
+    .content p strong {
+      color: black; }
+    /* line 91, ../scss/server/_partials/mixinsfold/_main.scss */
+    .content p em {
+      font-style: italic; }
+  /* line 95, ../scss/server/_partials/mixinsfold/_main.scss */
+  .content h6 {
+    font-size: 16px;
+    color: #111111; }
+  /* line 99, ../scss/server/_partials/mixinsfold/_main.scss */
+  .content h5 {
+    font-size: 18px;
+    color: #111111; }
+  /* line 103, ../scss/server/_partials/mixinsfold/_main.scss */
+  .content h4 {
+    font-size: 22px;
+    color: #111111; }
+  /* line 107, ../scss/server/_partials/mixinsfold/_main.scss */
+  .content h3 {
+    font-size: 28px;
+    color: #111111; }
+  /* line 111, ../scss/server/_partials/mixinsfold/_main.scss */
+  .content h2 {
+    font-size: 34px;
+    color: #111111; }
+  /* line 115, ../scss/server/_partials/mixinsfold/_main.scss */
+  .content h1 {
+    font-size: 40px;
+    color: #111111; }
+  /* line 130, ../scss/server/_partials/mixinsfold/_main.scss */
+  .content .row {
+    margin-left: 0px !important;
+    margin-right: 0px !important; }
+
+/* line 136, ../scss/server/_partials/mixinsfold/_main.scss */
+.main-block {
+  /* min-height: 500px; */
+  height: auto;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  margin-top: -100px;
+  z-index: 1; }
+
+/* line 147, ../scss/server/_partials/mixinsfold/_main.scss */
+.topnav {
+  padding-top: 50px; }
+
+/* line 151, ../scss/server/_partials/mixinsfold/_main.scss */
+.more-news {
+  width: 100%; }
+
+/* line 155, ../scss/server/_partials/mixinsfold/_main.scss */
+.date-social-note {
+  margin-top: 25px;
+  margin-bottom: 20px; }
+
+/* line 160, ../scss/server/_partials/mixinsfold/_main.scss */
+.page-header-text {
+  color: #fff;
+  font-size: 40px;
+  position: absolute;
+  top: -130px; }
+
+/* line 167, ../scss/server/_partials/mixinsfold/_main.scss */
+.bread_crumbs {
+  position: absolute;
+  top: 135px;
+  color: white; }
+
+/* line 173, ../scss/server/_partials/mixinsfold/_main.scss */
+.main-page-header {
+  margin-top: 20px;
+  height: 50px;
+  margin-bottom: 30px; }
+
+/* line 178, ../scss/server/_partials/mixinsfold/_main.scss */
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 0; }
+
+/* line 185, ../scss/server/_partials/mixinsfold/_main.scss */
+.title-note {
+  font-size: 28px;
+  font-family: "IBM Plex Sans";
+  color: #111111;
+  line-height: 1.2;
+  text-align: left; }
+
+/* line 193, ../scss/server/_partials/mixinsfold/_main.scss */
+.fa-long-arrow-right {
+  padding-left: 10px; }
+
+/* line 197, ../scss/server/_partials/mixinsfold/_main.scss */
+.block-title-news {
+  text-align: center; }
+  /* line 200, ../scss/server/_partials/mixinsfold/_main.scss */
+  .block-title-news .title {
+    font-size: 16px;
+    color: #111111;
+    line-height: 0.9;
+    text-align: left; }
+
+/* line 208, ../scss/server/_partials/mixinsfold/_main.scss */
+.more {
+  font-size: 12px;
+  font-family: "IBM Plex Sans";
+  color: #00a3e3;
+  text-transform: uppercase;
+  line-height: 1.2; }
+
+/* line 216, ../scss/server/_partials/mixinsfold/_main.scss */
+.active_category {
+  border-bottom: 1px solid black; }
+
+/* line 220, ../scss/server/_partials/mixinsfold/_main.scss */
+.change_season_competition {
+  margin-left: 20px; }
+
+/* line 224, ../scss/server/_partials/mixinsfold/_main.scss */
+.color-white {
+  font-size: 12px;
+  font-family: "IBM Plex Sans";
+  color: #bbbbbb;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+  z-index: 230; }
+
+/* line 234, ../scss/server/_partials/mixinsfold/_main.scss */
+#search_posts_form input.search_posts_input {
+  width: 340px;
+  padding-left: 30px; }
+
+/* line 239, ../scss/server/_partials/mixinsfold/_main.scss */
+.search_posts_div_form {
+  position: fixed;
+  z-index: 2000;
+  right: 5%;
+  top: 72px; }
+
+/* line 246, ../scss/server/_partials/mixinsfold/_main.scss */
+.search_posts_input_icon {
+  right: -25px;
+  position: relative;
+  z-index: 2500;
+  float: left;
+  color: #ebebeb;
+  top: 10px; }
+
+/* line 255, ../scss/server/_partials/mixinsfold/_main.scss */
+.search_posts_input_icon_close {
+  right: 10px;
+  position: relative;
+  z-index: 3000;
+  float: right;
+  color: #ebebeb;
+  top: -28px;
+  cursor: pointer; }
+
+/* line 265, ../scss/server/_partials/mixinsfold/_main.scss */
+.photo_or_video-main {
+  position: absolute;
+  top: 16px;
+  right: 30px;
+  color: white;
+  font-size: 40px; }
+
+/* line 272, ../scss/server/_partials/mixinsfold/_main.scss */
+.photo_or_video {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: white;
+  font-size: 40px; }
+
+/* line 280, ../scss/server/_partials/mixinsfold/_main.scss */
+.one-news-block {
+  margin-bottom: 20px;
+  cursor: pointer; }
+
+/* line 285, ../scss/server/_partials/mixinsfold/_main.scss */
+.date-event-time {
+  font-size: 12px;
+  font-family: "IBM Plex Sans";
+  color: white;
+  text-transform: uppercase;
+  line-height: 1.2;
+  padding-left: 0; }
+
+/* line 293, ../scss/server/_partials/mixinsfold/_main.scss */
+.date-event-place {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.2;
+  text-align: left; }
+
+/* line 299, ../scss/server/_partials/mixinsfold/_main.scss */
+.date-event-place-mobile {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.2;
+  text-align: center; }
+
+/* line 305, ../scss/server/_partials/mixinsfold/_main.scss */
+.events-right-block {
+  padding-left: 0px !important;
+  padding-right: 50px;
+  padding-top: 35px; }
+  /* line 309, ../scss/server/_partials/mixinsfold/_main.scss */
+  .events-right-block .news-mini-block {
+    background: #f5f5f5;
+    padding: 10px; }
+    /* line 313, ../scss/server/_partials/mixinsfold/_main.scss */
+    .events-right-block .news-mini-block .right-block-name {
+      font-size: 20px;
+      font-family: "IBM Plex Sans";
+      color: #111111;
+      line-height: 1.2;
+      text-align: left; }
+  /* line 322, ../scss/server/_partials/mixinsfold/_main.scss */
+  .events-right-block .news-mini-block-all {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 12px;
+    font-family: "IBM Plex Sans";
+    color: #00a3e3;
+    text-transform: uppercase; }
+  /* line 331, ../scss/server/_partials/mixinsfold/_main.scss */
+  .events-right-block .news-mini-block-one {
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    border-top: 1px solid #e6e6e6;
+    background: #ffffff;
+    padding: 20px;
+    height: auto;
+    min-height: 100px;
+    font-size: 16px;
+    font-family: "IBM Plex Sans"; }
+    /* line 343, ../scss/server/_partials/mixinsfold/_main.scss */
+    .events-right-block .news-mini-block-one .font-right-title {
+      padding-top: 5px;
+      font-size: 16px;
+      text-align: left;
+      line-height: 1.5;
+      color: #111111;
+      padding-bottom: 15px; }
+    /* line 352, ../scss/server/_partials/mixinsfold/_main.scss */
+    .events-right-block .news-mini-block-one .learn-more {
+      font-size: 14px;
+      font-family: "IBMPlexSans";
+      color: #00a3e3;
+      text-transform: uppercase;
+      line-height: 1.2;
+      text-align: left !important; }
+
+/* line 367, ../scss/server/_partials/mixinsfold/_main.scss */
+.events-list {
+  border-bottom: 1px solid #e6e6e6; }
+
+/* line 371, ../scss/server/_partials/mixinsfold/_main.scss */
+.btn_more_pag {
+  margin-bottom: 35px; }
+
+/* line 375, ../scss/server/_partials/mixinsfold/_main.scss */
+.bread-padd {
+  margin-left: 10px;
+  margin-right: 10px; }
+
+/* line 380, ../scss/server/_partials/mixinsfold/_main.scss */
+.icon-pad {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px; }
+
+/* line 386, ../scss/server/_partials/mixinsfold/_main.scss */
+.media-more {
+  margin-top: 35px;
+  margin-bottom: 35px; }
+
+/* line 58, ../scss/server/_partials/mixinsfold/_header.scss */
+.check-top {
+  padding-top: 0px !important; }
+
+/* line 62, ../scss/server/_partials/mixinsfold/_header.scss */
+.bread-container {
+  padding: 0px !important; }
+
+/* line 66, ../scss/server/_partials/mixinsfold/_header.scss */
+.header_menu {
+  background-image: -moz-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+  background-image: -webkit-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+  background-image: -ms-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 50px; }
+
+/* line 78, ../scss/server/_partials/mixinsfold/_header.scss */
+.top_header {
+  color: white; }
+
+/* line 81, ../scss/server/_partials/mixinsfold/_header.scss */
+.left_top_header {
+  font-size: 14px;
+  font-family: "IBM Plex Sans";
+  color: white; }
+  /* line 88, ../scss/server/_partials/mixinsfold/_header.scss */
+  .left_top_header a {
+    color: white; }
+
+/* line 92, ../scss/server/_partials/mixinsfold/_header.scss */
+.icon-top-menu {
+  display: none; }
+
+/* line 95, ../scss/server/_partials/mixinsfold/_header.scss */
+.top-menu {
+  margin-top: 50px;
+  padding-bottom: 5px;
+  width: 100%; }
+  /* line 100, ../scss/server/_partials/mixinsfold/_header.scss */
+  .top-menu .head-logo {
+    font-size: 13px; }
+    /* line 104, ../scss/server/_partials/mixinsfold/_header.scss */
+    .top-menu .head-logo img {
+      position: relative;
+      top: 10px; }
+  /* line 110, ../scss/server/_partials/mixinsfold/_header.scss */
+  .top-menu a {
+    color: #000;
+    font-size: 15px;
+    font-family: "IBM Plex Sans"; }
+  /* line 116, ../scss/server/_partials/mixinsfold/_header.scss */
+  .top-menu a:hover {
+    color: #eb178b !important; }
+  /* line 119, ../scss/server/_partials/mixinsfold/_header.scss */
+  .top-menu a:active {
+    color: #eb178b; }
+  /* line 122, ../scss/server/_partials/mixinsfold/_header.scss */
+  .top-menu .dop_ul {
+    position: relative;
+    padding-left: 10px; }
+    /* line 131, ../scss/server/_partials/mixinsfold/_header.scss */
+    .top-menu .dop_ul .first {
+      font-size: 17px;
+      font-family: "IBM Plex Sans";
+      color: #111111;
+      line-height: 1.2;
+      text-align: left;
+      padding-bottom: 5px; }
+    /* line 140, ../scss/server/_partials/mixinsfold/_header.scss */
+    .top-menu .dop_ul .second {
+      font-size: 14px;
+      font-family: "IBM Plex Sans";
+      color: #111111;
+      line-height: 1.2;
+      text-align: left; }
+  /* line 199, ../scss/server/_partials/mixinsfold/_header.scss */
+  .top-menu .nav-menu {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-top: 10px; }
+    /* line 207, ../scss/server/_partials/mixinsfold/_header.scss */
+    .top-menu .nav-menu li {
+      display: inline-block; }
+    /* line 211, ../scss/server/_partials/mixinsfold/_header.scss */
+    .top-menu .nav-menu a {
+      color: #000;
+      text-align: center;
+      padding-right: 14px;
+      font-size: 15px !important;
+      font-family: "IBM Plex Sans" !important; }
+    /* line 219, ../scss/server/_partials/mixinsfold/_header.scss */
+    .top-menu .nav-menu a:hover {
+      color: #eb178b !important; }
+    /* line 222, ../scss/server/_partials/mixinsfold/_header.scss */
+    .top-menu .nav-menu a:active {
+      color: #f33ca0; }
+
+/* line 236, ../scss/server/_partials/mixinsfold/_header.scss */
+.icon {
+  display: none; }
+
+/* line 240, ../scss/server/_partials/mixinsfold/_header.scss */
+.header-news {
+  height: 350px;
+  width: 100%;
+  margin-top: 75px; }
+
+/* line 246, ../scss/server/_partials/mixinsfold/_header.scss */
+.header-news-img {
+  height: 350px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: #464646;
+  filter: brightness(50%); }
+
+/* line 257, ../scss/server/_partials/mixinsfold/_header.scss */
+.page-name-header-news {
+  color: #fff;
+  position: absolute;
+  top: -120px;
+  font-size: 250%;
+  text-align: left; }
+
+@media screen and (min-width: 1201px) {
+  /* line 266, ../scss/server/_partials/mixinsfold/_header.scss */
+  .desctop-md-head {
+    display: none; }
+
+  /* line 269, ../scss/server/_partials/mixinsfold/_header.scss */
+  .mobile-header {
+    display: none; } }
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 274, ../scss/server/_partials/mixinsfold/_header.scss */
+  .desctop-lg-head {
+    display: none; }
+
+  /* line 277, ../scss/server/_partials/mixinsfold/_header.scss */
+  .mobile-header {
+    display: none; }
+
+  /* line 280, ../scss/server/_partials/mixinsfold/_header.scss */
+  .dop_ul {
+    bottom: 5px; } }
+@media screen and (max-width: 600px) {
+  /* line 286, ../scss/server/_partials/mixinsfold/_header.scss */
+  .info-block-head {
+    display: none; }
+
+  /* line 289, ../scss/server/_partials/mixinsfold/_header.scss */
+  .top-menu {
+    margin-top: 0px !important; }
+
+  /* line 292, ../scss/server/_partials/mixinsfold/_header.scss */
+  .header-news {
+    margin-top: 60px !important; }
+
+  /* line 303, ../scss/server/_partials/mixinsfold/_header.scss */
+  .none-top-img {
+    height: 230px !important; }
+
+  /* line 307, ../scss/server/_partials/mixinsfold/_header.scss */
+  .bread_crumbs {
+    top: 90px !important;
+    padding-left: 15px; }
+
+  /* line 311, ../scss/server/_partials/mixinsfold/_header.scss */
+  .check-top {
+    padding-top: 10px !important; }
+
+  /* line 315, ../scss/server/_partials/mixinsfold/_header.scss */
+  .dop_ul {
+    bottom: 5px; }
+
+  /* line 319, ../scss/server/_partials/mixinsfold/_header.scss */
+  .main-page-header {
+    margin-bottom: 0; }
+
+  /* line 323, ../scss/server/_partials/mixinsfold/_header.scss */
+  .carousel-title {
+    text-align: center !important; }
+
+  /* line 326, ../scss/server/_partials/mixinsfold/_header.scss */
+  .carousel-inner {
+    text-align: center !important; }
+
+  /* line 330, ../scss/server/_partials/mixinsfold/_header.scss */
+  .page-name-header-news {
+    top: -150px; } }
+@media screen and (max-width: 362px) {
+  /* line 336, ../scss/server/_partials/mixinsfold/_header.scss */
+  .bread_crumbs .color-white {
+    font-size: 10px; } }
+@media screen and (max-width: 991px) {
+  /* line 343, ../scss/server/_partials/mixinsfold/_header.scss */
+  .mobile-block-head {
+    margin-left: 0; }
+    /* line 346, ../scss/server/_partials/mixinsfold/_header.scss */
+    .mobile-block-head .icon {
+      position: relative;
+      top: 24px;
+      padding-right: 10px;
+      font-size: 20px;
+      font-family: "IBM Plex Sans"; }
+
+  /* line 354, ../scss/server/_partials/mixinsfold/_header.scss */
+  .desctop-md-head {
+    display: none; }
+
+  /* line 358, ../scss/server/_partials/mixinsfold/_header.scss */
+  .desctop-lg-head {
+    display: none; }
+
+  /* line 362, ../scss/server/_partials/mixinsfold/_header.scss */
+  .dop_ul {
+    bottom: 5px; }
+
+  /* line 366, ../scss/server/_partials/mixinsfold/_header.scss */
+  a.icon {
+    display: block;
+    color: #000; }
+
+  /* line 370, ../scss/server/_partials/mixinsfold/_header.scss */
+  .vary {
+    width: 100%; }
+    /* line 373, ../scss/server/_partials/mixinsfold/_header.scss */
+    .vary ul {
+      display: none;
+      width: 100%; }
+
+  /* line 379, ../scss/server/_partials/mixinsfold/_header.scss */
+  .vary.responsive {
+    padding-top: 10px; }
+    /* line 383, ../scss/server/_partials/mixinsfold/_header.scss */
+    .vary.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 50px; }
+    /* line 388, ../scss/server/_partials/mixinsfold/_header.scss */
+    .vary.responsive ul {
+      display: block; }
+    /* line 391, ../scss/server/_partials/mixinsfold/_header.scss */
+    .vary.responsive li {
+      padding-top: 8px;
+      float: none;
+      display: block;
+      text-align: left;
+      padding-bottom: 8px; } }
+/* line 1, ../scss/server/_partials/mixinsfold/_footer.scss */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #fafafa; }
+
+/* line 14, ../scss/server/_partials/mixinsfold/_footer.scss */
+.mobile .info-block {
+  text-align: center;
+  font-size: 16px;
+  font-family: "IBM Plex Sans";
+  color: #999999; }
+  /* line 21, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .mobile .info-block span {
+    padding-bottom: 10px;
+    padding-right: 10px; }
+  /* line 26, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .mobile .info-block a {
+    font-family: "IBM Plex Sans";
+    color: #999999;
+    text-align: center; }
+  /* line 31, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .mobile .info-block a:hover {
+    color: #00a3e3; }
+
+/* line 38, ../scss/server/_partials/mixinsfold/_footer.scss */
+.desctop footer {
+  height: 361px; }
+/* line 41, ../scss/server/_partials/mixinsfold/_footer.scss */
+.desctop .footer-container {
+  padding-top: 20px; }
+  /* line 45, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .desctop .footer-container .logo-block {
+    margin-bottom: 20px;
+    margin-left: 10px; }
+  /* line 50, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .desctop .footer-container li {
+    display: block; }
+  /* line 53, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .desctop .footer-container .footer-icon-social {
+    padding-right: 10px;
+    font-size: 16px; }
+  /* line 57, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .desctop .footer-container .info-block {
+    font-size: 16px;
+    font-family: "IBM Plex Sans";
+    color: #999999; }
+    /* line 62, ../scss/server/_partials/mixinsfold/_footer.scss */
+    .desctop .footer-container .info-block span {
+      padding-bottom: 10px;
+      padding-right: 10px; }
+  /* line 67, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .desctop .footer-container .footer-nav-gen {
+    padding-bottom: 20px; }
+  /* line 71, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .desctop .footer-container .footer-nav {
+    padding-bottom: 10px; }
+  /* line 75, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .desctop .footer-container a {
+    font-family: "IBM Plex Sans";
+    color: #999999;
+    text-align: center; }
+  /* line 81, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .desctop .footer-container .footer-nav-gen a {
+    font-size: 18px; }
+  /* line 85, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .desctop .footer-container .footer-nav a {
+    font-size: 15px; }
+  /* line 89, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .desctop .footer-container a:hover {
+    color: #00a3e3; }
+/* line 94, ../scss/server/_partials/mixinsfold/_footer.scss */
+.desctop hr {
+  border-bottom: 1px solid #b4b4b4;
+  border-bottom: 1px solid rgba(180, 180, 180, 0.5);
+  -webkit-background-clip: padding-box;
+  /* for Safari */
+  background-clip: padding-box;
+  /* for IE9+, Firefox 4+, Opera, Chrome */ }
+/* line 101, ../scss/server/_partials/mixinsfold/_footer.scss */
+.desctop .container-fluid {
+  height: 100%;
+  display: table;
+  width: 100%;
+  padding: 0; }
+/* line 108, ../scss/server/_partials/mixinsfold/_footer.scss */
+.desctop .row-fluid {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle; }
+/* line 114, ../scss/server/_partials/mixinsfold/_footer.scss */
+.desctop .centering {
+  float: none;
+  margin: 0 auto; }
+/* line 119, ../scss/server/_partials/mixinsfold/_footer.scss */
+.desctop .footer-politic-block {
+  height: 100px;
+  width: 100%;
+  background-color: #fff; }
+/* line 124, ../scss/server/_partials/mixinsfold/_footer.scss */
+.desctop .foot-desctop-span-info {
+  font-size: 14px;
+  color: #999999;
+  line-height: 2.143; }
+
+@media (min-width: 770px) and (max-width: 779px) {
+  /* line 136, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .desctop .footer-container .footer-nav-gen a {
+    font-size: 17px; }
+  /* line 140, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .desctop .footer-container .footer-nav a {
+    font-size: 14px; } }
+@media screen and (min-width: 770px) {
+  /* line 147, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .mobile {
+    display: none; } }
+@media screen and (max-width: 769px) {
+  /* line 152, ../scss/server/_partials/mixinsfold/_footer.scss */
+  body {
+    margin-bottom: 0 !important; }
+
+  /* line 155, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .desctop {
+    display: none; }
+
+  /* line 158, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .carousel-title {
+    text-align: center !important; }
+
+  /* line 161, ../scss/server/_partials/mixinsfold/_footer.scss */
+  .carousel-inner {
+    text-align: center !important; } }
+/* line 1, ../scss/server/_partials/mixinsfold/_news.scss */
+.body-block-news {
+  padding-top: 35px;
+  padding-left: 20px; }
+
+/* line 5, ../scss/server/_partials/mixinsfold/_news.scss */
+.body-block-competition {
+  padding-top: 20px; }
+
+/* line 9, ../scss/server/_partials/mixinsfold/_news.scss */
+.body-block-calendar {
+  padding-top: 35px;
+  padding-left: 35px;
+  padding-right: 20px; }
+
+/* line 14, ../scss/server/_partials/mixinsfold/_news.scss */
+.block-title-news {
+  text-align: left; }
+  /* line 16, ../scss/server/_partials/mixinsfold/_news.scss */
+  .block-title-news .news-one-title {
+    font-size: 18px;
+    font-family: "IBM Plex Sans";
+    color: #111111;
+    line-height: 1.3;
+    text-align: left; }
+
+/* line 26, ../scss/server/_partials/mixinsfold/_news.scss */
+.btn-href {
+  cursor: pointer; }
+
+/* line 30, ../scss/server/_partials/mixinsfold/_news.scss */
+.pb_navbar {
+  margin-top: 30px; }
+
+/* line 34, ../scss/server/_partials/mixinsfold/_news.scss */
+.block-img-news img {
+  width: 250px;
+  height: 160px; }
+
+/* line 39, ../scss/server/_partials/mixinsfold/_news.scss */
+.quote {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  height: auto;
+  width: auto;
+  position: relative;
+  text-align: center; }
+  /* line 47, ../scss/server/_partials/mixinsfold/_news.scss */
+  .quote .quote_content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px; }
+  /* line 54, ../scss/server/_partials/mixinsfold/_news.scss */
+  .quote .q_icon {
+    top: -1.875rem;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: 3.75rem;
+    height: 3.75rem;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: transparent;
+    border-radius: 3.75rem; }
+  /* line 70, ../scss/server/_partials/mixinsfold/_news.scss */
+  .quote .q_icon_icon {
+    width: 1.25rem;
+    height: 1.3125rem;
+    background-position: -62.3125rem -58.9375rem;
+    top: 1.180rem;
+    content: '';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    color: #eb178b; }
+  /* line 85, ../scss/server/_partials/mixinsfold/_news.scss */
+  .quote .b-content-citate__photo {
+    padding-top: 25px;
+    width: auto; }
+  /* line 91, ../scss/server/_partials/mixinsfold/_news.scss */
+  .quote .b-content-citate__photo_inner {
+    border-radius: 9.625rem;
+    border: 0.0625rem solid rgba(0, 0, 0, 0.1);
+    background-color: #fefefe;
+    width: 9.625rem;
+    height: 9.625rem;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0; }
+    /* line 104, ../scss/server/_partials/mixinsfold/_news.scss */
+    .quote .b-content-citate__photo_inner img {
+      margin-top: 77px;
+      width: 8rem;
+      height: 8rem;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      margin-left: auto;
+      margin-right: auto;
+      vertical-align: bottom;
+      display: inline-block;
+      border-radius: 8rem; }
+  /* line 122, ../scss/server/_partials/mixinsfold/_news.scss */
+  .quote .qoute_text_block {
+    padding-top: 25px; }
+  /* line 125, ../scss/server/_partials/mixinsfold/_news.scss */
+  .quote .qoute_text {
+    font-size: 16px;
+    color: #111111;
+    line-height: 1.3; }
+  /* line 131, ../scss/server/_partials/mixinsfold/_news.scss */
+  .quote .qoute_position {
+    padding-top: 25px;
+    font-style: italic;
+    font-size: 1.035rem;
+    line-height: 1.4285714286;
+    color: rgba(0, 0, 0, 0.5); }
+
+/* line 3, ../scss/server/_partials/mixinsfold/_federation.scss */
+.federation-wrapper h3 {
+  margin-top: 5px;
+  font-size: 21px;
+  font-family: "IBM Plex Sans";
+  color: #111111;
+  line-height: 1.286; }
+/* line 11, ../scss/server/_partials/mixinsfold/_federation.scss */
+.federation-wrapper p {
+  margin-top: 5px;
+  font-size: 16px;
+  font-family: "IBM Plex Sans";
+  color: #555555;
+  line-height: 1.556; }
+/* line 18, ../scss/server/_partials/mixinsfold/_federation.scss */
+.federation-wrapper .guidance-wrap {
+  background-color: #f9f9f9;
+  margin-bottom: 20px; }
+  /* line 21, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .federation-wrapper .guidance-wrap h6 {
+    font-size: 25px;
+    font-family: "IBM Plex Sans";
+    color: #111111;
+    line-height: 1.286;
+    text-align: left; }
+  /* line 28, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .federation-wrapper .guidance-wrap .guidance-info {
+    font-size: 16px;
+    font-family: "IBM Plex Sans";
+    color: #555555;
+    line-height: 1.556;
+    text-align: left;
+    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 0, 0); }
+  /* line 39, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .federation-wrapper .guidance-wrap .guidance-phone {
+    font-size: 18px;
+    font-family: "IBM Plex Sans";
+    color: #111111;
+    line-height: 1.8;
+    text-align: left; }
+
+/* line 49, ../scss/server/_partials/mixinsfold/_federation.scss */
+.page-header-text-federation {
+  font-size: 40px;
+  font-family: "IBM Plex Sans";
+  color: white;
+  line-height: 1.2; }
+
+/* line 56, ../scss/server/_partials/mixinsfold/_federation.scss */
+.desctop-head-news {
+  position: absolute;
+  top: 150px; }
+
+/* line 61, ../scss/server/_partials/mixinsfold/_federation.scss */
+.mobile-head-news {
+  position: absolute;
+  top: 120px; }
+
+/* line 71, ../scss/server/_partials/mixinsfold/_federation.scss */
+.page-nav-federation a {
+  font-size: 18px;
+  font-family: "IBM Plex Sans";
+  color: white;
+  line-height: 1.2; }
+/* line 78, ../scss/server/_partials/mixinsfold/_federation.scss */
+.page-nav-federation a:not(:last-child) {
+  padding-right: 20px; }
+
+/* line 82, ../scss/server/_partials/mixinsfold/_federation.scss */
+a:hover {
+  color: #00a3e3; }
+
+/* line 86, ../scss/server/_partials/mixinsfold/_federation.scss */
+a.federation-active {
+  color: #00a3e3; }
+
+/* line 91, ../scss/server/_partials/mixinsfold/_federation.scss */
+span.page-header-text-federation a {
+  color: white; }
+/* line 94, ../scss/server/_partials/mixinsfold/_federation.scss */
+span.page-header-text-federation a:hover {
+  color: #00a3e3; }
+
+/* line 99, ../scss/server/_partials/mixinsfold/_federation.scss */
+.contact-content {
+  text-align: left; }
+  /* line 102, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .contact-content .contact-i-left {
+    font-size: 24px;
+    color: #dddddd;
+    padding-right: 30px;
+    padding-left: 3px; }
+  /* line 110, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .contact-content .contact-i-center {
+    font-size: 20px;
+    color: #dddddd;
+    padding-right: 26px; }
+  /* line 117, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .contact-content .contact-i-right {
+    font-size: 23px;
+    color: #dddddd;
+    padding-right: 27px; }
+  /* line 124, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .contact-content span {
+    font-size: 20px;
+    font-family: "IBM Plex Sans";
+    color: #111111;
+    line-height: 1.8;
+    font-weight: bold; }
+  /* line 131, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .contact-content .contact-span-name {
+    padding-right: 50px; }
+  /* line 134, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .contact-content .contact-span-name-last {
+    padding-right: 27px; }
+  /* line 138, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .contact-content .contact-span-info {
+    font-size: 18px;
+    font-family: "IBM Plex Sans";
+    color: #555555;
+    line-height: 1.556; }
+
+/* line 146, ../scss/server/_partials/mixinsfold/_federation.scss */
+.wrapper-form {
+  background-color: #f2f2f2;
+  font-family: "IBM Plex Sans"; }
+  /* line 151, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .wrapper-form .form_box {
+    margin: 40px; }
+    /* line 155, ../scss/server/_partials/mixinsfold/_federation.scss */
+    .wrapper-form .form_box h4 {
+      font-size: 25px;
+      color: #111111;
+      line-height: 1.286;
+      text-align: left;
+      padding-bottom: 25px; }
+    /* line 163, ../scss/server/_partials/mixinsfold/_federation.scss */
+    .wrapper-form .form_box p {
+      font-size: 18px;
+      color: #555555;
+      line-height: 1.556;
+      text-align: left;
+      padding-bottom: 35px; }
+    /* line 170, ../scss/server/_partials/mixinsfold/_federation.scss */
+    .wrapper-form .form_box .input-block-left {
+      height: 60px; }
+    /* line 174, ../scss/server/_partials/mixinsfold/_federation.scss */
+    .wrapper-form .form_box .input-block-right {
+      height: 60px; }
+    /* line 179, ../scss/server/_partials/mixinsfold/_federation.scss */
+    .wrapper-form .form_box .input-block-message {
+      height: 100px;
+      margin-bottom: 30px; }
+    /* line 183, ../scss/server/_partials/mixinsfold/_federation.scss */
+    .wrapper-form .form_box input {
+      display: block;
+      font-size: 14px;
+      width: 100%;
+      height: 100%;
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      border-style: solid;
+      border-width: 1px;
+      border-color: gainsboro;
+      background-color: white;
+      padding-left: 15px;
+      font-size: 20px;
+      font-family: "IBM Plex Sans";
+      color: #555555;
+      line-height: 1.556; }
+  /* line 203, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .wrapper-form .form_box input:focus {
+    outline: none;
+    font-size: 18px;
+    font-family: "IBMPlexSans";
+    color: #f08989;
+    line-height: 1.556;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #f9acac;
+    background-color: #fff7f7; }
+  /* line 215, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .wrapper-form .form_box .btn_submit {
+    border: none;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 48px;
+    line-height: 28px;
+    padding: 0;
+    border-style: solid;
+    border-width: 1px;
+    background-image: -moz-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+    background-image: -webkit-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+    background-image: -ms-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+    font-size: 12px;
+    font-family: "IBM Plex Sans" !important;
+    color: white !important;
+    text-transform: uppercase;
+    font-size: 18px; }
+  /* line 251, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .wrapper-form .form_box .btn_submit.disabled,
+  .wrapper-form .form_box .btn_submit.disabled:hover {
+    background: white;
+    color: #00a3e3 !important;
+    cursor: default; }
+
+@media screen and (max-width: 992px) {
+  /* line 261, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .guidance-wrap h6 {
+    font-size: 22px !important; }
+  /* line 264, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .guidance-wrap .guidance-info {
+    font-size: 14px !important; }
+  /* line 268, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .guidance-wrap .guidance-phone {
+    font-size: 16px !important; }
+
+  /* line 272, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .body-block-news {
+    padding-right: 20px; }
+
+  /* line 278, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .body-block-calendar {
+    padding-right: 35px; }
+
+  /* line 282, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .media-more {
+    padding-right: 20px; } }
+@media screen and (min-width: 575px) {
+  /* line 288, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .adap-header-federation {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important; } }
+@media screen and (max-width: 575px) {
+  /* line 297, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .adap-header-federation {
+    padding-top: 50px; } }
+@media screen and (min-width: 768px) {
+  /* line 303, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .input-block-left {
+    padding-right: 0px !important; }
+
+  /* line 306, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .input-block-right {
+    padding-left: 0px !important; } }
+@media screen and (max-width: 767px) {
+  /* line 313, ../scss/server/_partials/mixinsfold/_federation.scss */
+  .wrapper-form .form_box {
+    margin: 0px;
+    margin-top: 20px; } }
+/* line 1, ../scss/server/_partials/mixinsfold/_competition.scss */
+.one-competition {
+  height: auto;
+  padding: 20px 10px;
+  background-color: #f7f7f7;
+  margin-bottom: 20px;
+  margin-left: 15px; }
+  /* line 11, ../scss/server/_partials/mixinsfold/_competition.scss */
+  .one-competition .gender {
+    position: absolute;
+    top: -20px;
+    left: -10px; }
+    /* line 16, ../scss/server/_partials/mixinsfold/_competition.scss */
+    .one-competition .gender .boy {
+      background-color: blue; }
+    /* line 20, ../scss/server/_partials/mixinsfold/_competition.scss */
+    .one-competition .gender .girl {
+      background-color: pink; }
+  /* line 25, ../scss/server/_partials/mixinsfold/_competition.scss */
+  .one-competition .title {
+    padding-left: 5px; }
+
+/* line 30, ../scss/server/_partials/mixinsfold/_competition.scss */
+select {
+  border-radius: 0px !important; }
+
+/* line 34, ../scss/server/_partials/mixinsfold/_competition.scss */
+.competition-body-block {
+  padding-right: 35px; }
+
+/* line 43, ../scss/server/_partials/mixinsfold/_competition.scss */
+.desctop-competition-doc {
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+/* line 47, ../scss/server/_partials/mixinsfold/_competition.scss */
+.mobile-competition-doc {
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+/* line 51, ../scss/server/_partials/mixinsfold/_competition.scss */
+.row-block-statistic {
+  margin: 0px !important; }
+
+/* line 55, ../scss/server/_partials/mixinsfold/_competition.scss */
+.icon-select {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 300; }
+
+/* line 61, ../scss/server/_partials/mixinsfold/_competition.scss */
+.icon-calendar {
+  position: absolute;
+  top: 12px;
+  right: 8px;
+  z-index: 300; }
+
+/* line 68, ../scss/server/_partials/mixinsfold/_competition.scss */
+.calendar-field {
+  font-size: 14px !important; }
+
+@media (min-width: 574px) and (max-width: 20000px) {
+  /* line 72, ../scss/server/_partials/mixinsfold/_competition.scss */
+  .mobile-competition-doc {
+    display: none; } }
+@media screen and (max-width: 575px) {
+  /* line 79, ../scss/server/_partials/mixinsfold/_competition.scss */
+  .desctop-competition-doc {
+    display: none; } }
+/* line 22, ../scss/server/_partials/mixinsfold/_main-page.scss */
+a.all-news .btn_learn_more {
+  width: 100%;
+  height: 48px;
+  color: #00a3e3 !important;
+  font-size: 15px;
+  font-family: "IBM Plex Sans";
+  text-transform: uppercase;
+  line-height: 1.2;
+  cursor: default;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #00a3e3;
+  background-color: rgba(255, 255, 255, 0);
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px; }
+
+/* line 43, ../scss/server/_partials/mixinsfold/_main-page.scss */
+a.all-news:hover .btn_learn_more {
+  background-image: -moz-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+  background-image: -webkit-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+  background-image: -ms-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+  color: white !important;
+  border-width: 0px; }
+
+/* line 54, ../scss/server/_partials/mixinsfold/_main-page.scss */
+a.all-news:active .btn_learn_more {
+  background-image: -moz-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+  background-image: -webkit-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+  background-image: -ms-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+  color: white !important;
+  border-width: 0px; }
+
+/* line 64, ../scss/server/_partials/mixinsfold/_main-page.scss */
+.learn-more-color-hover {
+  color: #eb178b !important; }
+
+/* line 67, ../scss/server/_partials/mixinsfold/_main-page.scss */
+.main-page-content {
+  margin-bottom: 20px; }
+  /* line 71, ../scss/server/_partials/mixinsfold/_main-page.scss */
+  .main-page-content .big-news-block {
+    height: 300px; }
+  /* line 75, ../scss/server/_partials/mixinsfold/_main-page.scss */
+  .main-page-content .mouse-hover-class-check-media {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    filter: brightness(50%); }
+  /* line 84, ../scss/server/_partials/mixinsfold/_main-page.scss */
+  .main-page-content .mouse-hover-class-check {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    filter: brightness(50%); }
+  /* line 94, ../scss/server/_partials/mixinsfold/_main-page.scss */
+  .main-page-content .mouse-hover-class-main-news {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 100%;
+    background-position: center center;
+    background-size: cover; }
+  /* line 103, ../scss/server/_partials/mixinsfold/_main-page.scss */
+  .main-page-content .gradient-hover-id {
+    width: 100%;
+    height: 100%;
+    background-image: -moz-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+    background-image: -webkit-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+    background-image: -ms-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%; }
+  /* line 125, ../scss/server/_partials/mixinsfold/_main-page.scss */
+  .main-page-content .main-page-content-first-text {
+    padding-left: 20px; }
+    /* line 129, ../scss/server/_partials/mixinsfold/_main-page.scss */
+    .main-page-content .main-page-content-first-text span.title {
+      position: absolute;
+      bottom: 80px;
+      font-size: 16px;
+      font-family: "IBM Plex Sans";
+      color: #111111;
+      line-height: 1.3;
+      text-align: left;
+      z-index: 500; }
+    /* line 141, ../scss/server/_partials/mixinsfold/_main-page.scss */
+    .main-page-content .main-page-content-first-text span.date-event-time {
+      position: absolute;
+      bottom: 220px;
+      font-size: 12px;
+      font-family: "IBM Plex Sans";
+      color: white;
+      text-transform: uppercase;
+      line-height: 1.2;
+      padding-left: 0; }
+    /* line 153, ../scss/server/_partials/mixinsfold/_main-page.scss */
+    .main-page-content .main-page-content-first-text span.date-media-time {
+      position: absolute;
+      bottom: 370px;
+      font-size: 12px;
+      font-family: "IBM Plex Sans";
+      color: white;
+      text-transform: uppercase;
+      line-height: 1.2;
+      padding-left: 15px; }
+    /* line 165, ../scss/server/_partials/mixinsfold/_main-page.scss */
+    .main-page-content .main-page-content-first-text span.more {
+      position: absolute;
+      bottom: 40px;
+      color: #00a3e3; }
+    /* line 172, ../scss/server/_partials/mixinsfold/_main-page.scss */
+    .main-page-content .main-page-content-first-text span.more:hover {
+      color: #eb178b; }
+
+/* line 180, ../scss/server/_partials/mixinsfold/_main-page.scss */
+.one-news-block {
+  cursor: pointer; }
+  /* line 184, ../scss/server/_partials/mixinsfold/_main-page.scss */
+  .one-news-block .litle-news-block {
+    height: 150px; }
+  /* line 187, ../scss/server/_partials/mixinsfold/_main-page.scss */
+  .one-news-block .one-block-title-news {
+    font-size: 16px;
+    font-family: "IBM Plex Sans";
+    color: #111111;
+    line-height: 1.3;
+    text-align: left; }
+  /* line 195, ../scss/server/_partials/mixinsfold/_main-page.scss */
+  .one-news-block .learn-more {
+    font-size: 12px;
+    font-family: "IBMPlexSans";
+    color: #00a3e3;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: left !important; }
+
+/* line 205, ../scss/server/_partials/mixinsfold/_main-page.scss */
+.media-page-content-first-text {
+  position: absolute;
+  bottom: 200px;
+  left: 30px; }
+
+/* line 211, ../scss/server/_partials/mixinsfold/_main-page.scss */
+.media-page-content-first-text a {
+  position: absolute;
+  left: 30px; }
+
+/* line 216, ../scss/server/_partials/mixinsfold/_main-page.scss */
+.media-page-content-first-text span.date-media-time {
+  position: absolute;
+  top: 60px;
+  left: 0; }
+
+/* line 222, ../scss/server/_partials/mixinsfold/_main-page.scss */
+.back-black {
+  background-color: black; }
+
+/* line 226, ../scss/server/_partials/mixinsfold/_main-page.scss */
+.carousel-inner {
+  text-align: left;
+  height: 170px; }
+
+/* line 231, ../scss/server/_partials/mixinsfold/_main-page.scss */
+.carousel-item {
+  margin-top: 5px; }
+
+/* line 235, ../scss/server/_partials/mixinsfold/_main-page.scss */
+.img-footer-mobile {
+  width: 80px;
+  margin-right: 10px; }
+
+/* line 249, ../scss/server/_partials/mixinsfold/_main-page.scss */
+.carousel-desctop {
+  position: absolute;
+  top: 95px;
+  width: 100%; }
+  /* line 254, ../scss/server/_partials/mixinsfold/_main-page.scss */
+  .carousel-desctop .carousel-content {
+    padding-left: 50px; }
+
+/* line 259, ../scss/server/_partials/mixinsfold/_main-page.scss */
+.carousel-title {
+  color: white;
+  font-size: 14px;
+  color: white;
+  line-height: 1.5;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+/* line 270, ../scss/server/_partials/mixinsfold/_main-page.scss */
+.carousel-more {
+  font-size: 12px;
+  color: #00a3e3;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left !important; }
+
+/* line 278, ../scss/server/_partials/mixinsfold/_main-page.scss */
+.carousel-mobile {
+  position: absolute;
+  top: 40px;
+  width: 100%; }
+
+/* line 288, ../scss/server/_partials/mixinsfold/_main-page.scss */
+.mobile-img-news-block {
+  width: 100%;
+  height: 200px;
+  background-position: center center;
+  background-size: cover;
+  filter: brightness(50%); }
+
+/* line 1, ../scss/server/_partials/mixinsfold/_event.scss */
+.event-block {
+  margin-top: 20px;
+  cursor: pointer; }
+  /* line 5, ../scss/server/_partials/mixinsfold/_event.scss */
+  .event-block .litle-news-block {
+    height: 150px; }
+
+/* line 10, ../scss/server/_partials/mixinsfold/_event.scss */
+.mouse-hover-class-event {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  filter: brightness(90%); }
+
+/* line 19, ../scss/server/_partials/mixinsfold/_event.scss */
+.gradient-hover-id {
+  width: 100%;
+  height: 100%;
+  background-image: -moz-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+  background-image: -webkit-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+  background-image: -ms-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+  opacity: 0;
+  position: absolute;
+  left: 0px;
+  top: 0px; }
+
+/* line 31, ../scss/server/_partials/mixinsfold/_event.scss */
+.gradient-hover-event {
+  background-image: -moz-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+  background-image: -webkit-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+  background-image: -ms-linear-gradient(0deg, #20a3d9 0%, #eb178b 100%);
+  opacity: 0.6;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  opacity: 0;
+  /*Элемент полностью прозрачный (невидимый)*/
+  transition: 1s;
+  /*Скорость перехода состояния элемента*/
+  width: 100%;
+  height: 100%; }
+
+/* line 48, ../scss/server/_partials/mixinsfold/_event.scss */
+.block-img {
+  width: 200px;
+  float: left; }
+  /* line 52, ../scss/server/_partials/mixinsfold/_event.scss */
+  .block-img img {
+    width: 100%; }
+
+/* line 57, ../scss/server/_partials/mixinsfold/_event.scss */
+.event-description {
+  padding-top: 10px; }
+
+/* line 61, ../scss/server/_partials/mixinsfold/_event.scss */
+.date-event-block {
+  padding-top: 23px;
+  padding-left: 40px; }
+
+/* line 66, ../scss/server/_partials/mixinsfold/_event.scss */
+.date-event-day {
+  font-size: 40px;
+  font-family: "IBM Plex Sans";
+  color: #111111;
+  line-height: 0.72; }
+
+/* line 73, ../scss/server/_partials/mixinsfold/_event.scss */
+.date-event-month {
+  font-size: 16px;
+  font-family: "IBM Plex Sans";
+  color: #111111;
+  line-height: 1.8;
+  text-transform: lowercase;
+  padding-left: 0; }
+
+/* line 84, ../scss/server/_partials/mixinsfold/_event.scss */
+.place-event {
+  font-size: 14px !important;
+  font-family: "IBM Plex Sans";
+  color: #aaaaaa;
+  line-height: 1.8;
+  padding-left: 0; }
+
+/* line 93, ../scss/server/_partials/mixinsfold/_event.scss */
+.date-media-day {
+  font-size: 40px;
+  font-family: "IBM Plex Sans";
+  color: white;
+  line-height: 0.72; }
+
+/* line 100, ../scss/server/_partials/mixinsfold/_event.scss */
+.date-media-month {
+  font-size: 16px;
+  font-family: "IBM Plex Sans";
+  color: white;
+  line-height: 1.8;
+  text-transform: lowercase; }
+
+/* line 108, ../scss/server/_partials/mixinsfold/_event.scss */
+.date-media-time {
+  font-size: 12px;
+  font-family: "IBM Plex Sans";
+  color: white;
+  text-transform: uppercase;
+  line-height: 1.2;
+  position: relative;
+  left: -3px; }
+
+/* line 118, ../scss/server/_partials/mixinsfold/_event.scss */
+.font-event-title {
+  font-size: 22px;
+  font-family: "IBM Plex Sans";
+  color: #111111; }
+
+/* line 124, ../scss/server/_partials/mixinsfold/_event.scss */
+.font-media-title {
+  font-size: 20px;
+  font-family: "IBM Plex Sans";
+  color: white; }
+
+/* line 1, ../scss/server/_partials/mixinsfold/projects.scss */
+.projects-main {
+  margin-bottom: 50px; }
+  /* line 6, ../scss/server/_partials/mixinsfold/projects.scss */
+  .projects-main .projects-more {
+    font-size: 12px;
+    font-family: "IBM Plex Sans";
+    color: #00a3e3;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: left;
+    margin-top: 20px; }
+  /* line 16, ../scss/server/_partials/mixinsfold/projects.scss */
+  .projects-main .preview {
+    font-size: 16px;
+    font-family: "IBM Plex Sans";
+    color: #555555;
+    line-height: 1.556;
+    text-align: left; }
+  /* line 24, ../scss/server/_partials/mixinsfold/projects.scss */
+  .projects-main .one-project-block {
+    height: 300px; }
+
+/* line 28, ../scss/server/_partials/mixinsfold/projects.scss */
+.mouse-hover-class-project {
+  width: 100%;
+  margin-top: 25px;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  filter: brightness(50%); }
+
+/* line 36, ../scss/server/_partials/mixinsfold/projects.scss */
+.title-note-project {
+  font-size: 28px;
+  color: #111111;
+  line-height: 1.286;
+  text-align: left; }
+
+/* line 45, ../scss/server/_partials/mixinsfold/projects.scss */
+.desctop-project .logo-project {
+  padding-top: 27px; }
+/* line 49, ../scss/server/_partials/mixinsfold/projects.scss */
+.desctop-project .title-block-project {
+  padding-top: 25px; }
+
+/* line 55, ../scss/server/_partials/mixinsfold/projects.scss */
+.mobile-project .logo-project {
+  padding-top: 22px; }
+/* line 63, ../scss/server/_partials/mixinsfold/projects.scss */
+.mobile-project .preview-block-project {
+  padding-top: 15px; }
+
+@media screen and (max-width: 576px) {
+  /* line 69, ../scss/server/_partials/mixinsfold/projects.scss */
+  .desctop-project {
+    display: none; } }
+@media screen and (min-width: 577px) {
+  /* line 74, ../scss/server/_partials/mixinsfold/projects.scss */
+  .mobile-project {
+    display: none; } }
+@media (max-width: 576px) {
+  /* line 37, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .main_block {
+    width: 100%; }
+
+  /* line 40, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .pad-adap-block {
+    margin-top: 20px; }
+
+  /* line 43, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .row-block {
+    margin: 0px !important; }
+
+  /* line 46, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .col-block {
+    padding: 0px !important; }
+
+  /* line 49, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .body-block {
+    padding-left: 0; }
+
+  /* line 53, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .block-img-events {
+    text-align: center;
+    width: 100% !important; }
+
+  /* line 58, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .date-event-block {
+    padding-top: 0;
+    padding-left: 0; }
+
+  /* line 66, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .custom_container {
+    max-width: 100%; }
+
+  /* line 70, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .body-block-news {
+    padding-right: 0px;
+    padding-top: 15px; }
+
+  /* line 74, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .body-block-competition {
+    padding-right: 0px;
+    padding-top: 15px; }
+
+  /* line 78, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .body-block-calendar {
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-left: 20px; }
+
+  /* line 84, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .media-more {
+    padding-right: 0px;
+    padding-left: 0px; } }
+@media (max-width: 1000px) {
+  /* line 92, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .pb_navbar .navbar-nav {
+    background: #f5f5f5 !important; }
+
+  /* line 96, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .events-right-block {
+    display: none; } }
+@media (max-width: 1000px) {
+  /* line 102, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  #search_posts_form input.search_posts_input {
+    width: 273px;
+    padding-left: 30px; }
+
+  /* line 107, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .search_posts_div_form {
+    position: fixed;
+    z-index: 2000;
+    left: 10px;
+    top: 357px; }
+
+  /* line 114, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .search_posts_input_icon {
+    position: relative;
+    z-index: 2500;
+    float: left;
+    color: #ebebeb; }
+
+  /* line 123, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .search_posts_input_icon_close {
+    right: 30px;
+    position: relative;
+    z-index: 3000;
+    float: right;
+    color: #ebebeb;
+    top: -28px;
+    cursor: pointer; } }
+@media (min-width: 576px) {
+  /* line 135, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .mobile-head-news {
+    display: none; } }
+@media (min-width: 576px) {
+  /* line 141, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .mobile-head-news {
+    display: none; } }
+@media (max-width: 767px) {
+  /* line 146, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .game_block_score {
+    font-size: 34px; }
+
+  /* line 149, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .statistic-margin-block {
+    margin-left: 0px !important; }
+
+  /* line 153, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .page-name-header-news {
+    text-align: center; }
+
+  /* line 157, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .date-event-day {
+    font-size: 30px; }
+
+  /* line 160, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .date-event-month {
+    font-size: 12px; }
+
+  /* line 164, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .font-event-title {
+    font-size: 16px; } }
+@media (max-width: 575px) {
+  /* line 171, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .desctop-head-news {
+    display: none; }
+
+  /* line 175, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .date-event-block {
+    margin-bottom: 0px !important;
+    padding-left: 15px; } }
+/* line 182, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+.custom_container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+
+@media (min-width: 1600px) {
+  /* line 191, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .container {
+    max-width: 1400px; } }
+@media (max-width: 953px) {
+  /* line 197, ../scss/server/_partials/mixinsfold/_media-screen.scss */
+  .icon-calendar {
+    right: 15px; } }

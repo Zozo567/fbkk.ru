@@ -1,0 +1,200 @@
+// @media (max-width: 1200px) {
+//     .custom_container {
+//         max-width: 1200px;
+//     }
+
+//     .body-block {
+//         padding-left: 0;
+//     }
+// }
+
+// @media (max-width: 992px) {
+//     .custom_container {
+//       max-width: 960px;
+//     }
+
+//     .body-block {
+//         padding-left: 0;
+//     }
+// }
+
+// @media (max-width: 800px) {
+//     .custom_container {
+//         max-width: 100%;
+//     }
+    
+//     .body-block {
+//         padding-left: 0;
+//     }
+
+//     .event-description {
+//         text-align: center;
+//     }
+// }
+
+
+@media (max-width: 576px) {
+    .main_block {
+        width: 100%;
+    }
+    .pad-adap-block{
+        margin-top: 20px;
+    }
+    .row-block{
+        margin: 0px !important;
+    }
+    .col-block{
+        padding: 0px !important;
+    }
+    .body-block {
+        padding-left: 0;
+    }
+
+    .block-img-events {
+        text-align: center;
+        width: 100% !important;
+    }
+
+    .date-event-block {
+        padding-top: 0;
+        padding-left: 0;
+    }
+
+    // .custom_container {
+    //     max-width: 576px;
+    // }
+    .custom_container {
+        max-width: 100%;
+    }
+
+    .body-block-news{ 
+        padding-right:0px;
+        padding-top:15px;
+    }
+    .body-block-competition{ 
+        padding-right:0px;
+        padding-top:15px;
+    }
+    .body-block-calendar{
+        padding-right:20px;
+        padding-top:20px;
+        padding-left: 20px;
+    }
+
+    .media-more{
+        padding-right: 0px;
+        padding-left: 0px;
+	}
+    
+}
+
+@media (max-width: 1000px) {
+    .pb_navbar .navbar-nav {
+        background: #f5f5f5 !important;
+    }
+    
+    .events-right-block{
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    #search_posts_form input.search_posts_input {
+        width: 273px;
+        padding-left: 30px;
+    }
+    
+    .search_posts_div_form {
+        position: fixed;
+        z-index: 2000;
+        left: 10px;
+        top: 357px;
+    }
+    
+    .search_posts_input_icon {
+        // right: -46px;
+        position: relative;
+        z-index: 2500;
+        float: left;
+        color: #ebebeb;
+        // top: 25px;
+    }
+    
+    .search_posts_input_icon_close {
+        right: 30px;
+        position: relative;
+        z-index: 3000;
+        float: right;
+        color: #ebebeb;
+        top: -28px;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 576px) {
+    .mobile-head-news{
+        display: none;
+    }
+}
+
+@media (min-width: 576px) {
+    .mobile-head-news{
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    .game_block_score{
+        font-size: 34px;
+    }
+    .statistic-margin-block {
+        margin-left:0px !important;
+    }
+
+    .page-name-header-news{
+        text-align: center;
+    }
+
+    .date-event-day{
+        font-size: 30px;
+    }
+    .date-event-month{
+        font-size: 12px;
+    }
+
+    .font-event-title{
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 575px) {
+    .desctop-head-news{
+        display: none;
+    }
+
+    .date-event-block{
+        // padding-top: 45px !important;
+        margin-bottom: 0px !important;
+        padding-left: 15px;
+    }
+}
+
+.custom_container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 1600px){
+    .container {
+        max-width: 1400px;
+    }
+}
+
+@media (max-width: 953px){
+    .icon-calendar{
+        right: 15px;
+    }
+}
