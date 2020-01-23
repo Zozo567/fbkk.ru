@@ -19,8 +19,8 @@ $url = explode('/', $_SERVER['REQUEST_URI']);
 
 if( stristr($_SERVER['REQUEST_URI'], '.pdf') ){
 
-$file = file_get_contents($_SERVER['REQUEST_URI']);
-die($file);
+    $file = file_get_contents($_SERVER['REQUEST_URI']);
+    die($file);
 
 } elseif( $url[1] == 'rfb' && !empty($url[2]) ){
 
