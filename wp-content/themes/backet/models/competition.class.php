@@ -486,4 +486,18 @@ class Competition {
         return ['status' => true, 'content' => $content, 'count_offset' => $offset + 5, 'month_this' => $month_this_competition, 'date_from' => $date_from, 'date_to' => $date_to];
     }
 
+    static function getRequestToCompetition()
+    {
+        $value = 'hey';
+
+        ob_start();
+
+        require_once __DIR__ .'/../pages/request.php';
+
+        $data = ob_get_contents();
+
+        ob_end_clean();
+
+        return $data;
+    }
 }

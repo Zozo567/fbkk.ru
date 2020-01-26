@@ -65,3 +65,25 @@ function function_call(){
 
 	die();
 }
+
+function add_help_menu() {
+    add_menu_page(
+        'Заявки',
+        'Заявки',
+        'manage_options',
+        'admin_help',
+        'request_list_page',
+        'dashicons-editor-help',
+        '10'
+    );
+}
+add_action('admin_menu', 'add_help_menu');
+
+function request_list_page() {
+
+	include_once 'models/competition.class.php';
+
+	$return = Competition::getRequestToCompetition();
+
+    echo $return;
+}
