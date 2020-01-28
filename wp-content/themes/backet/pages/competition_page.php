@@ -13,6 +13,9 @@ foreach( $competition_id_data as $val ){
     if( $val['year_born'] == $competition_year_born )
         $competition_id_stat = (int) $val['id'];
 } 
+
+// Check on the result of switching the possibility of registering member
+$competition_registration = get_field('registration', $competition_id);
 ?>
 
 <div class="container">
@@ -24,6 +27,11 @@ foreach( $competition_id_data as $val ){
             <div class="competition-type-menu-wraper">
                 <div class="competition-type-menu">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <?php if( !empty($competition_registration) ){ ?>
+                            <li class="nav-item">
+                                <a class="nav-link" style="" id="registration-tab" data-toggle="tab" href="#registration" role="tab" aria-controls="registration" aria-selected="false">Регистрация участников</a>
+                            </li>
+                        <?php } ?>
                         <li class="nav-item">
                             <a class="nav-link active" style="" id="schedule-tab" data-toggle="tab" href="#schedule" role="tab" aria-controls="schedule" aria-selected="true">Турнир</a>
                         </li>
@@ -38,6 +46,13 @@ foreach( $competition_id_data as $val ){
             </div>
 
             <div class="tab-content" id="myTabContent">
+
+                <?php if( !empty($competition_registration) ){ ?>
+                    <div class="tab-pane fade" id="registration" role="tabpanel" aria-labelledby="registration-tab">
+                        <span>hey</span>
+                    </div>
+                <?php } ?>
+
                 <div class="tab-pane fade show active in" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
                     <link href="https://artemyev.me/rfb/widgets.css" rel="stylesheet" />
                     <script src="https://russiabasket.ru/Content/html/assets/production/js/widgets.js"></script>
