@@ -164,7 +164,7 @@ $competition_registration = get_field('registration', $competition_id);
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <button class="btn btn-default add-to-list-request" data-type="trainer">Отправить заявку</button>
+                                    <button type="submit" class="btn btn-default add-to-list-request" data-type="trainer">Отправить заявку</button>
                                 </div>
                             </div>
                         </form>
