@@ -145,7 +145,6 @@ jQuery('html,body').ready(function () {
                 alert("Письмо не отправлено. Пожалуйста, повторите попытку!");
            }
        });
-
     });
 
     jQuery('body').on('change', '#calendar-tab .change_conclusion_team.schedule_change', function(){
@@ -389,6 +388,54 @@ jQuery('html,body').ready(function () {
         var data = jQuery(this).children('input[name="search_value"]').val();
 
         window.location.replace('/search?query=' + data);
+    });
+
+    // Add one player or trainer to request list
+    jQuery('body').on('click', '.add-to-list-request', function(e){
+
+        e.preventDefault();
+
+        _this = jQuery(this);
+
+        var type = _this.data('type');
+
+        var block_type = _this.parents('.request-' + type + '-block');
+
+        var name = block_type.find('input[name="' + type + '[Name]"]:not([type=hidden])');
+        var second_name = block_type.find('input[name="' + type + '[SecondName]"]:not([type=hidden])');
+        var last_name = block_type.find('input[name="' + type + '[LastName]"]:not([type=hidden])');
+        var date_born = block_type.find('input[name="' + type + '[DateBorn]"]:not([type=hidden])');
+        var area = block_type.find('input[name="' + type + '[Area]"]:not([type=hidden])');
+
+        block_type.find('#' + type + '-list')
+            .append('<tr>' 
+                + '<td>' + name.val() + ' ' + second_name.val() + ' ' + last_name.val()
+                    + '<input type="hidden" name="' + type + '[Name][]" value="' + name.val() + '"'
+                    + '<input type="hidden" name="' + type + '[SecondName][]" value="' + second_name.val() + '"'
+                    + '<input type="hidden" name="' + type + '[LastName][]" value="' + last_name.val() + '"'
+                +'</td>'
+                + '<td>' + date_born.val()
+                    + '<input type="hidden" name="' + type + '[DateBorn][]" value="' + date_born.val() + '"'
+                +'</td>'
+                + '<td>' + area.val()
+                    + '<input type="hidden" name="' + type + '[Area][]" value="' + area.val() + '"'
+                +'</td>'
+                + '<td><a href="" class="request-delete-one-note"><i class="fa fa-trash" aria-hidden="true"></i></a></td>'
+                + '</tr>');
+        
+        name.val('');
+        second_name.val('');
+        last_name.val('');
+        date_born.val('');
+        area.val('');
+    });
+
+    // Delete one player or trainer from request list
+    jQuery('body').on('click', '.request-delete-one-note', function(e){
+
+        e.preventDefault();
+
+        jQuery(this).parents('tr').remove();
     });
 
     $( "div.mouse-hover-class-check" ).mouseover(function() {
