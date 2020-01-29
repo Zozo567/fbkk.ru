@@ -486,32 +486,138 @@ class Competition {
         return ['status' => true, 'content' => $content, 'count_offset' => $offset + 5, 'month_this' => $month_this_competition, 'date_from' => $date_from, 'date_to' => $date_to];
     }
 
-    static function getRequestToCompetition()
+    static function getRequestListToCompetition()
     {
-        $value = 'hey';
+        $data = [];
 
-        ob_start();
+        global $wpdb;
 
-        require_once __DIR__ .'/../pages/request.php';
+        // for pagination
+        $start_count = !empty($_GET['p']) ? $_GET['p'] * 20 : 0;
+        $last_count = $start_count + 20;
 
-        $data = ob_get_contents();
+        $sql = "SELECT * FROM fbkk_request_list LIMIT $start_count, $last_count";
 
-        ob_end_clean();
+        $query = $wpdb->get_results($sql, ARRAY_A);
+
+        foreach( $query as $item ){
+
+            $data[$item['ID']] = $item;
+
+            $query_user = self::getUserRequestByHid( $item['ID'] );
+
+            $query_players = self::getPlayersRequestByHid( $item['ID'] );
+
+            $query_trainers = self::getTrainersRequestByHid( $item['ID'] );
+
+            $data[$item['ID']] += [
+                'user' => $query_user,
+                'players' => $query_players,
+                'trainers' => $query_trainers
+            ];
+        }
 
         return $data;
     }
 
-    static function getMunicipalitiesList()
+    static function addToRequestListToCompetition()
     {
         global $wpdb;
 
-        $sql = "SELECT * FROM fbkk_municipalities_list";
+        $input_data = $_POST;
 
-        $municipalities_list = $wpdb->get_results("SELECT * FROM fbkk_municipalities_list");
+        $data = [
+            'Status' => 1, // not confirmed
+            'DateCreate' => time(),
+            'Cid' => $input_data['competition']['ID'],
+            'YearBorn' => $input_data['competition']['YearBorn']
+        ];
 
-        foreach( $municipalities_list as $item )
-            $list[$item->ID] = $item->Name;
+        $wpdb->insert( 'fbkk_request_list', $data);
 
-        return $list;
+        $Hid = Basket::getLastInsertIdTable('fbkk_request_list');
+
+        foreach( $input_data as $key => $item ){
+
+            if( is_array($item) ){
+
+                if( !empty($item[0]) )
+                    unset($item[0]);
+
+                if( $key == 'user' ){
+
+                    $item['Phone'] = Basket::unformatPhoneNumber($item['Phone']);
+                    $item['Hid'] = $Hid;
+
+                    $wpdb->insert( 'fbkk_request_users', $item);
+
+                } else if( $key == 'player' ){
+
+                    foreach( $item as $value ){
+
+                        $value['DateBorn'] = strtotime($value['DateBorn']);
+
+                        $value['Hid'] = $Hid;
+
+                        $wpdb->insert( 'fbkk_request_players', $value);
+                    }
+
+                } else if( $key == 'trainer' ) {
+
+                    foreach( $item as $value ){
+
+                        $value['DateBorn'] = strtotime($value['DateBorn']);
+
+                        $value['Hid'] = $Hid;
+
+                        $wpdb->insert( 'fbkk_request_trainers', $value);
+                    }
+                }
+            }
+        }
+
+        return ['status' => true];
+    }
+
+    static function getPlayersRequestByHid( $Hid )
+    {
+        global $wpdb;
+
+        $sql = "SELECT * FROM fbkk_request_players WHERE `Hid` = $Hid";
+
+        $query = $wpdb->get_results($sql, ARRAY_A);
+
+        return $query;
+    }
+
+    static function getTrainersRequestByHid( $Hid )
+    {
+        global $wpdb;
+
+        $sql = "SELECT * FROM fbkk_request_trainers WHERE `Hid` = $Hid";
+
+        $query = $wpdb->get_results($sql, ARRAY_A);
+
+        return $query;
+    }
+
+    static function getUserRequestByHid( $Hid )
+    {
+        global $wpdb;
+
+        $sql = "SELECT * FROM fbkk_request_users WHERE `Hid` = $Hid";
+
+        $query = $wpdb->get_results($sql, ARRAY_A);
+
+        return current($query);
+    }
+
+    static function getCompetitionName( $Cid, $YearBorn )
+    {
+        $competition = get_post($Cid);
+
+        $return = $competition->post_title .' - '. $YearBorn .'г.р.';
+
+        return $return;
     }
 }

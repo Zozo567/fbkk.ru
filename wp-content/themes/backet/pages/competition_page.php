@@ -48,10 +48,12 @@ $competition_registration = get_field('registration', $competition_id);
             <div class="tab-content" id="myTabContent">
 
                 <?php if( !empty($competition_registration) ){ 
-                    $municipalities_list = Competition::getMunicipalitiesList();
+                    $municipalities_list = Basket::getMunicipalitiesList();
                     ?>
                     <div class="tab-pane fade" id="registration" role="tabpanel" aria-labelledby="registration-tab">
-                        <form id="requetst_form">
+                        <form id="requetst_form" data-url="<?php echo admin_url("admin-ajax.php") ?>" data-href="Competition/addToRequestListToCompetition">
+                            <input type="hidden" name="competition[ID]" value="<?=$competition_id?>">
+                            <input type="hidden" name="competition[YearBorn]" value="<?=$competition_year_born?>">
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <p>Заявка на регистрацию</p>
@@ -59,8 +61,8 @@ $competition_registration = get_field('registration', $competition_id);
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <p>Муниципальное образование</p>
-                                        <select class="change_conclusion_team" name="user[Mid]">
-                                            <option selected disabled>Выберите муниципальное образование</option>
+                                        <select class="change_conclusion_team" name="user[Mid]" required>
+                                            <option value="" selected>Выберите муниципальное образование</option>
                                             <?php foreach( $municipalities_list as $key => $item ){ ?>
                                                 <option value="<?=$key?>"><?=$item?></option>
                                             <?php } ?>
@@ -68,19 +70,19 @@ $competition_registration = get_field('registration', $competition_id);
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4">
                                         <p>Фамилия</p>
-                                        <input type="text" class="form-control" name="user[SecondName]" autocomplete="off">
+                                        <input type="text" class="form-control" name="user[SecondName]" autocomplete="off" required>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4">
                                         <p>Имя</p>
-                                        <input type="text" class="form-control" name="user[Name]" autocomplete="off">
+                                        <input type="text" class="form-control" name="user[Name]" autocomplete="off" required>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4">
                                         <p>Отчество</p>
-                                        <input type="text" class="form-control" name="user[LastName]" autocomplete="off">
+                                        <input type="text" class="form-control" name="user[LastName]" autocomplete="off" required>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p>Телефон</p>
-                                        <input type="text" class="form-control" name="user[Phone]" autocomplete="off">
+                                        <input type="text" class="form-control masked_phone" name="user[Phone]" autocomplete="off" required>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p>Email</p>
@@ -103,23 +105,23 @@ $competition_registration = get_field('registration', $competition_id);
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4">
                                         <p>Фамилия</p>
-                                        <input type="text" class="form-control" name="player[SecondName]" autocomplete="off">
+                                        <input type="text" class="form-control" name="player[0][SecondName]" autocomplete="off">
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4">
                                         <p>Имя</p>
-                                        <input type="text" class="form-control" name="player[Name]" autocomplete="off">
+                                        <input type="text" class="form-control" name="player[0][Name]" autocomplete="off">
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4">
                                         <p>Отчество</p>
-                                        <input type="text" class="form-control" name="player[LastName]" autocomplete="off">
+                                        <input type="text" class="form-control" name="player[0][LastName]" autocomplete="off">
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p>Дата рождения</p>
-                                        <input type="text" class="form-control" name="player[DateBorn]" autocomplete="off">
+                                        <input type="text" class="form-control masked_date" name="player[0][DateBorn]" autocomplete="off">
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p>Район</p>
-                                        <input type="text" class="form-control" name="player[Area]" autocomplete="off">
+                                        <input type="text" class="form-control" name="player[0][Area]" autocomplete="off">
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-3">
                                         <button class="btn btn-default add-to-list-request" data-type="player">Добавить игрока</button>
@@ -141,30 +143,30 @@ $competition_registration = get_field('registration', $competition_id);
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4">
                                         <p>Фамилия</p>
-                                        <input type="text" class="form-control" name="trainer[SecondName]" autocomplete="off">
+                                        <input type="text" class="form-control" name="trainer[0][SecondName]" autocomplete="off">
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4">
                                         <p>Имя</p>
-                                        <input type="text" class="form-control" name="trainer[Name]" autocomplete="off">
+                                        <input type="text" class="form-control" name="trainer[0][Name]" autocomplete="off">
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4">
                                         <p>Отчество</p>
-                                        <input type="text" class="form-control" name="trainer[LastName]" autocomplete="off">
+                                        <input type="text" class="form-control" name="trainer[0][LastName]" autocomplete="off">
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p>Дата рождения</p>
-                                        <input type="text" class="form-control" name="trainer[DateBorn]" autocomplete="off">
+                                        <input type="text" class="form-control masked_date" name="trainer[0][DateBorn]" autocomplete="off">
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p>Район</p>
-                                        <input type="text" class="form-control" name="trainer[Area]" autocomplete="off">
+                                        <input type="text" class="form-control" name="trainer[0][Area]" autocomplete="off">
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-3">
                                         <button class="btn btn-default add-to-list-request" data-type="trainer">Добавить тренера</button>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <button type="submit" class="btn btn-default add-to-list-request" data-type="trainer">Отправить заявку</button>
+                                    <button type="submit" class="btn btn-default">Отправить заявку</button>
                                 </div>
                             </div>
                         </form>

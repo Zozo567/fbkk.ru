@@ -189,8 +189,66 @@ class Basket {
         ob_end_clean();
 
         return $content;
-
-        
     }
 
+    static function getLastInsertIdTable( $table )
+    {
+        global $wpdb;
+
+        $sql = "SELECT MAX(ID) AS max_id FROM $table";
+
+        $query = $wpdb->get_results($sql);
+
+        $last_id = (int) $query[0]->max_id;
+
+        return $last_id;
+    }
+
+    static function unformatPhoneNumber( $phone = false )
+    {
+        if( !$phone )
+            $phone = $_POST['Phone'];
+
+        $update_phone = preg_replace("/[^0-9]/", '', $phone);
+
+        return $update_phone;
+    }
+
+    static function formatPhoneNumber( $phone = false )
+    {
+        if( !$phone )
+            $phone = $_POST['Phone'];
+
+        $update_phone = '8 ('.substr($phone, 1, 3).') '.substr($phone, 4, 3).' '.substr($phone, -4);
+
+        return $update_phone;
+    }
+
+    static function getMunicipalitiesList()
+    {
+        global $wpdb;
+
+        $sql = "SELECT * FROM fbkk_municipalities_list";
+
+        $municipalities_list = $wpdb->get_results($sql);
+
+        foreach( $municipalities_list as $item )
+            $list[$item->ID] = $item->Name;
+
+        return $list;
+    }
+
+    static function getStatusRequestList()
+    {
+        global $wpdb;
+
+        $sql = "SELECT * FROM fbkk_request_status";
+
+        $municipalities_list = $wpdb->get_results($sql);
+
+        foreach( $municipalities_list as $item )
+            $list[$item->ID] = $item->Name;
+
+        return $list;
+    }
 }

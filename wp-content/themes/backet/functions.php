@@ -59,6 +59,9 @@ function function_call(){
 		case "Media/getGaleryPhotos" :
 			$return = Media::getGaleryPhotos();
 			break;
+		case "Competition/addToRequestListToCompetition" :
+			$return = Competition::addToRequestListToCompetition();
+			break;
 	}
 
 	echo json_encode($return);
@@ -82,8 +85,18 @@ add_action('admin_menu', 'add_help_menu');
 function request_list_page() {
 
 	include_once 'models/competition.class.php';
+	include_once 'models/basket.class.php';
 
-	$return = Competition::getRequestToCompetition();
+	// array requests list
+	$data = Competition::getRequestListToCompetition();
+
+	ob_start();
+
+	require_once __DIR__ .'/pages/request.php';
+
+	$return = ob_get_contents();
+
+	ob_end_clean();
 
     echo $return;
 }
