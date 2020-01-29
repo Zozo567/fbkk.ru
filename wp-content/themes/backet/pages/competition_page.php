@@ -61,8 +61,8 @@ $competition_registration = get_field('registration', $competition_id);
                                         <p>Муниципальное образование</p>
                                         <select class="change_conclusion_team" name="user[Mid]">
                                             <option selected disabled>Выберите муниципальное образование</option>
-                                            <?php foreach( $municipalities_list as $item ){ ?>
-                                                <option></option>
+                                            <?php foreach( $municipalities_list as $key => $item ){ ?>
+                                                <option value="<?=$key?>"><?=$item?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -160,7 +160,7 @@ $competition_registration = get_field('registration', $competition_id);
                                         <input type="text" class="form-control" name="trainer[Area]" autocomplete="off">
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-3">
-                                        <button class="btn btn-default">Добавить тренера</button>
+                                        <button class="btn btn-default add-to-list-request" data-type="trainer">Добавить тренера</button>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">

@@ -503,7 +503,14 @@ class Competition {
 
     static function getMunicipalitiesList()
     {
-        $list = [];
+        global $wpdb;
+
+        $sql = "SELECT * FROM fbkk_municipalities_list";
+
+        $municipalities_list = $wpdb->get_results("SELECT * FROM fbkk_municipalities_list");
+
+        foreach( $municipalities_list as $item )
+            $list[$item->ID] = $item->Name;
 
         return $list;
     }
