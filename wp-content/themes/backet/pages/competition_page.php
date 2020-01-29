@@ -47,9 +47,127 @@ $competition_registration = get_field('registration', $competition_id);
 
             <div class="tab-content" id="myTabContent">
 
-                <?php if( !empty($competition_registration) ){ ?>
+                <?php if( !empty($competition_registration) ){ 
+                    $municipalities_list = Competition::getMunicipalitiesList();
+                    ?>
                     <div class="tab-pane fade" id="registration" role="tabpanel" aria-labelledby="registration-tab">
-                        <span>hey</span>
+                        <form id="requetst_form">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <p>Заявка на регистрацию</p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <p>Муниципальное образование</p>
+                                        <select class="change_conclusion_team" name="user[Mid]">
+                                            <option selected disabled>Выберите муниципальное образование</option>
+                                            <?php foreach( $municipalities_list as $item ){ ?>
+                                                <option></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4">
+                                        <p>Фамилия</p>
+                                        <input type="text" class="form-control" name=user[SecondName] autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4">
+                                        <p>Имя</p>
+                                        <input type="text" class="form-control" name=user[Name] autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4">
+                                        <p>Отчество</p>
+                                        <input type="text" class="form-control" name=user[LastName] autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <p>Телефон</p>
+                                        <input type="text" class="form-control" name=user[Phone] autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <p>Email</p>
+                                        <input type="email" class="form-control" name=user[Email] autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <p>Участники</p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <p>Список участников</p>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <table class="table" id="players-list">
+                                            
+                                        </table>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4">
+                                        <p>Фамилия</p>
+                                        <input type="text" class="form-control" name=player[SecondName] autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4">
+                                        <p>Имя</p>
+                                        <input type="text" class="form-control" name=player[Name] autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4">
+                                        <p>Отчество</p>
+                                        <input type="text" class="form-control" name=player[LastName] autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <p>Дата рождения</p>
+                                        <input type="text" class="form-control" name=player[DateBorn] autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <p>Район</p>
+                                        <input type="text" class="form-control" name=player[Area] autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                        <button class="btn btn-default add-to-list-request" data-type="players">Добавить игрока</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <p>Тренера</p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <p>Список тренеров</p>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <table class="table" id="trainers-list">
+                                            
+                                        </table>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4">
+                                        <p>Фамилия</p>
+                                        <input type="text" class="form-control" name=player[SecondName] autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4">
+                                        <p>Имя</p>
+                                        <input type="text" class="form-control" name=player[Name] autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4">
+                                        <p>Отчество</p>
+                                        <input type="text" class="form-control" name=player[LastName] autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <p>Дата рождения</p>
+                                        <input type="text" class="form-control" name=player[DateBorn] autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <p>Район</p>
+                                        <input type="text" class="form-control" name=player[Area] autocomplete="off">
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                        <button class="btn btn-default">Добавить тренера</button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <button class="btn btn-default add-to-list-request" data-type="trainers">Отправить заявку</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 <?php } ?>
 

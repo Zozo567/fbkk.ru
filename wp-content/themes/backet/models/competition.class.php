@@ -500,4 +500,11 @@ class Competition {
 
         return $data;
     }
+
+    static function getMunicipalitiesList()
+    {
+        $list = [];
+
+        return $list;
+    }
 }
