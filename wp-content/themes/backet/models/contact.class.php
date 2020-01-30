@@ -147,8 +147,11 @@ class Contact {
 
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;  // specify main and backup server
-        $mail->Username = "site@fbkk.ru";  // SMTP username
-        $mail->Password = "deneb-lurk-Opal2-Thaws-payee-Diploma6-2Brawn-vents-unchain6-3Busboy"; // SMTP password
+
+        include_once 'structure.class.php';
+
+        $mail->Username = Structure::$site_fbkk['email'];  // SMTP username
+        $mail->Password = Structure::$site_fbkk['pass']; // SMTP password
 
         $mail->From = "no-reply@fbkk.ru";
         $mail->FromName = "no-reply@fbkk.ru";

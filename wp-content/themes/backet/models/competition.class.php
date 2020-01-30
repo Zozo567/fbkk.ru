@@ -546,6 +546,8 @@ class Competition {
 
                 if( $key == 'user' ){
 
+                    $return = array_merge($data, $item);
+
                     $item['Phone'] = Basket::unformatPhoneNumber($item['Phone']);
                     $item['Hid'] = $Hid;
 
@@ -575,6 +577,8 @@ class Competition {
                 }
             }
         }
+
+        self::sendEmailAboutRequest( $return );
 
         return ['status' => true];
     }
@@ -619,5 +623,55 @@ class Competition {
         $return = $competition->post_title .' - '. $YearBorn .'г.р.';
 
         return $return;
+    }
+
+    static function sendEmailAboutRequest( $data = false )
+    {
+        $patch = realpath(__DIR__.'/../');
+        $dir = __DIR__;
+
+        include_once realpath(__DIR__.'/../').'/libraries/PhpMailer/PHPMailer.php';
+        include_once realpath(__DIR__.'/../').'/libraries/PhpMailer/Exception.php';
+        include_once realpath(__DIR__.'/../').'/libraries/PhpMailer/SMTP.php';
+        include_once realpath(__DIR__.'/../').'/libraries/PhpMailer/OAuth.php';
+        include_once realpath(__DIR__.'/../').'/libraries/PhpMailer/POP3.php';
+
+        $mail = new PHPMailer\PHPMailer\PHPMailer();
+        $mail->CharSet = 'utf-8';
+        $mail->IsSMTP();     // turn on SMTP authentication
+        $mail->Host = "smtp.yandex.ru";  // specify main and backup server
+        $mail->SMTPAuth = true;  // specify main and backup server
+
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;  // specify main and backup server
+
+        include_once 'structure.class.php';
+
+        $mail->Username = Structure::$site_fbkk['email'];  // SMTP username
+        $mail->Password = Structure::$site_fbkk['pass']; // SMTP password
+
+        $mail->From = "no-reply@fbkk.ru";
+        $mail->FromName = "no-reply@fbkk.ru";
+
+        // TODO: email replace to stat@lokobasket.com
+        $mail->addAddress('nik-kit-tuk@mail.ru');
+            
+        $mail->isHTML(true);
+        $mail->Subject = 'Новое письмо с сайта';
+
+        $competition_meta = self::getCompetitionName( $data['Cid'], $data['YearBorn'] );
+        $request_user_name = $data['Name'] .' '. $data['SecondName'] .' '. $data['LastName'];
+        $municipalities = Basket::getMunicipalitiesList()[$data['Mid']];
+        
+        // TODO: send message
+        $mail->Body = "Новая заявка на соревнование \"$competition_meta\": <br><br>
+            Имя заявителя - $request_user_name <br>
+            Телефон заявителя - {$data['Phone']} <br>
+            Email заявителя - {$data['Email']} <br>
+            Муниципальное образование - $municipalities <br><br>
+            Для более подробной информации перейдите в админ панель на страницу со списком заявок.";
+
+        $mail->AltBody = strip_tags( $message );
+        return $mail->Send();
     }
 }
