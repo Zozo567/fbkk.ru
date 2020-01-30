@@ -62,6 +62,9 @@ function function_call(){
 		case "Competition/addToRequestListToCompetition" :
 			$return = Competition::addToRequestListToCompetition();
 			break;
+		case "Competition/changeStatusRequest" :
+			$return = Competition::changeStatusRequest();
+			break;
 	}
 
 	echo json_encode($return);

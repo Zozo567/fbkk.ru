@@ -496,7 +496,7 @@ class Competition {
         $start_count = !empty($_GET['p']) ? $_GET['p'] * 20 : 0;
         $last_count = $start_count + 20;
 
-        $sql = "SELECT * FROM fbkk_request_list LIMIT $start_count, $last_count";
+        $sql = "SELECT * FROM fbkk_request_list ORDER BY `ID` DESC LIMIT $start_count, $last_count";
 
         $query = $wpdb->get_results($sql, ARRAY_A);
 
@@ -582,7 +582,7 @@ class Competition {
         $request_user_name = $return['Name'] .' '. $return['SecondName'] .' '. $return['LastName'];
         $municipalities = Basket::getMunicipalitiesList()[$return['Mid']];
         
-        // TODO: send message
+        // TODO: change message to send
         $message = "Новая заявка на соревнование \"$competition_meta\": <br><br>
             Имя заявителя - $request_user_name <br>
             Телефон заявителя - {$return['Phone']} <br>
@@ -637,7 +637,7 @@ class Competition {
         return $return;
     }
 
-    static function sendEmailAboutRequest( $message )
+    static function sendEmailAboutRequest( $message, $email_to = false )
     {
         $patch = realpath(__DIR__.'/../');
         $dir = __DIR__;
@@ -665,8 +665,10 @@ class Competition {
         $mail->From = "no-reply@fbkk.ru";
         $mail->FromName = "no-reply@fbkk.ru";
 
-        // TODO: email replace to stat@lokobasket.com
-        $mail->addAddress('nik-kit-tuk@mail.ru');
+        if( empty($email_to) )
+            $email_to = 'nik-kit-tuk@mail.ru'; // TODO: replace this test email to stat@lokobasket.com
+
+        $mail->addAddress($email_to);
             
         $mail->isHTML(true);
         $mail->Subject = 'Новое письмо с сайта';
@@ -676,5 +678,41 @@ class Competition {
         $mail->AltBody = strip_tags( $message );
         
         return $mail->Send();
+    }
+
+    static function changeStatusRequest()
+    {
+        $input_data = $_POST;
+
+        if( $input_data['request']['ID'] ){
+
+            global $wpdb;
+
+            $request_data = self::getRequestListToCompetition()[$input_data['request']['ID']];
+
+            $update_data = [
+                'Status' => $input_data['request']['Status']
+            ];
+
+            $where_update = [
+                'ID' => $input_data['request']['ID']
+            ];
+
+            $wpdb->update( 'fbkk_request_list', $update_data, $where_update);
+
+            if( !empty($request_data['user']['Email']) )
+                $email_to = $request_data['user']['Email'];
+
+            $competition_meta = self::getCompetitionName( $request_data['Cid'], $request_data['YearBorn'] );
+            $request_user_name = $request_data['user']['Name'] .' '. $request_data['user']['SecondName'] .' '. $request_data['user']['LastName'];
+            $status_list = Basket::getStatusRequestList();
+
+            $message = "Уважаемый, $request_user_name. <br>
+            Ваша заявка на соревнование \"$competition_meta\" изменила статус с \"{$status_list[$request_data['Status']]}\" на \"{$status_list[$input_data['request']['Status']]}\".";
+
+            self::sendEmailAboutRequest( $message, $email_to );
+        }
+
+        return ['status' => true];
     }
 }
