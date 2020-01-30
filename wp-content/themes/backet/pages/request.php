@@ -1,9 +1,11 @@
+<link href="<?php echo get_template_directory_uri(); ?>/assets/css/bootstrap.min.css?<?=$version?>" rel="stylesheet">
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.min.js?<?=$version?>"></script>
 <div class="col-lg-12 col-md-12 col-sm-12">
     <form class="form-filter-requests-list">
         <input type="hidden" name="page" value="admin_help">
         <input type="hidden" name="p" value="0">
     </form>
-    <table class="table form-table" ellspacing="2" border="1" cellpadding="5">
+    <table class="table form-table">
         <thead>
             <tr>
                 <th class="text_center">Название соревнования</th>
@@ -11,6 +13,7 @@
                 <th class="text_center">Телефон</th>
                 <th class="text_center">Email</th>
                 <th class="text_center">Статус заявки</th>
+                <th class="text_center"></th>
             </tr>
         </thead>
         <tbody>
@@ -29,6 +32,37 @@
                                 <?php } ?>
                             </select>
                         </form>
+                    </td>
+                    <td>
+                        <a class="" data-toggle="collapse" href="#collapseExample_<?=$item['ID']?>" role="button" aria-expanded="false" aria-controls="collapseExample_<?=$item['ID']?>">
+                            Подробнее
+                        </a>
+                    </td>
+                </tr>
+                <tr class="collapse" id="collapseExample_<?=$item['ID']?>">
+                    <td class="" colspan="3">
+                        <b>Участники</b>
+                        <table>
+                            <?php foreach( $item['players'] as $it ){ ?>
+                                <tr>
+                                    <td><?=$it['Name'] .' '. $it['SecondName'] .' '. $it['LastName']?></td>
+                                    <td><?= date("d.m.Y", (int) $it['DateBorn']) ?></td>
+                                    <td><?= $it['Area'] ?></td>
+                                </tr>
+                            <?php } ?>
+                        </table>
+                    </td>
+                    <td class="" colspan="3">
+                        <b>Тренера</b>
+                        <table>
+                            <?php foreach( $item['trainers'] as $it ){ ?>
+                                <tr>
+                                    <td><?=$it['Name'] .' '. $it['SecondName'] .' '. $it['LastName']?></td>
+                                    <td><?= date("d.m.Y", (int) $it['DateBorn']) ?></td>
+                                    <td><?= $it['Area'] ?></td>
+                                </tr>
+                            <?php } ?>
+                        </table>
                     </td>
                 </tr>
             <?php } ?>
