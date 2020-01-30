@@ -492,11 +492,14 @@ class Competition {
 
         global $wpdb;
 
-        // for pagination
-        $start_count = !empty($_GET['p']) ? $_GET['p'] * 20 : 0;
-        $last_count = $start_count + 20;
+        $count_requests = 20;
 
-        $sql = "SELECT * FROM fbkk_request_list ORDER BY `ID` DESC LIMIT $start_count, $last_count";
+        // for pagination
+        $start_count = !empty($_GET['p']) ? $_GET['p'] * $count_requests : 0;
+
+        $count_all_requests = Basket::getCountAllNotesInTable('fbkk_request_list');
+
+        $sql = "SELECT * FROM fbkk_request_list ORDER BY `ID` DESC LIMIT $start_count, $count_requests";
 
         $query = $wpdb->get_results($sql, ARRAY_A);
 
@@ -517,7 +520,7 @@ class Competition {
             ];
         }
 
-        return $data;
+        return ['requests_list' => $data, 'count_requests' => $count_requests, 'count_all_requests' => $count_all_requests];
     }
 
     static function addToRequestListToCompetition()
