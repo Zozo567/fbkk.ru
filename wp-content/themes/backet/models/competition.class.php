@@ -578,7 +578,19 @@ class Competition {
             }
         }
 
-        self::sendEmailAboutRequest( $return );
+        $competition_meta = self::getCompetitionName( $return['Cid'], $return['YearBorn'] );
+        $request_user_name = $return['Name'] .' '. $return['SecondName'] .' '. $return['LastName'];
+        $municipalities = Basket::getMunicipalitiesList()[$return['Mid']];
+        
+        // TODO: send message
+        $message = "Новая заявка на соревнование \"$competition_meta\": <br><br>
+            Имя заявителя - $request_user_name <br>
+            Телефон заявителя - {$return['Phone']} <br>
+            Email заявителя - {$return['Email']} <br>
+            Муниципальное образование - $municipalities <br><br>
+            Для более подробной информации перейдите в админ панель на страницу со списком заявок.";
+
+        self::sendEmailAboutRequest( $message );
 
         return ['status' => true];
     }
@@ -625,7 +637,7 @@ class Competition {
         return $return;
     }
 
-    static function sendEmailAboutRequest( $data = false )
+    static function sendEmailAboutRequest( $message )
     {
         $patch = realpath(__DIR__.'/../');
         $dir = __DIR__;
@@ -659,19 +671,10 @@ class Competition {
         $mail->isHTML(true);
         $mail->Subject = 'Новое письмо с сайта';
 
-        $competition_meta = self::getCompetitionName( $data['Cid'], $data['YearBorn'] );
-        $request_user_name = $data['Name'] .' '. $data['SecondName'] .' '. $data['LastName'];
-        $municipalities = Basket::getMunicipalitiesList()[$data['Mid']];
-        
-        // TODO: send message
-        $mail->Body = "Новая заявка на соревнование \"$competition_meta\": <br><br>
-            Имя заявителя - $request_user_name <br>
-            Телефон заявителя - {$data['Phone']} <br>
-            Email заявителя - {$data['Email']} <br>
-            Муниципальное образование - $municipalities <br><br>
-            Для более подробной информации перейдите в админ панель на страницу со списком заявок.";
+        $mail->Body = $message;
 
         $mail->AltBody = strip_tags( $message );
+        
         return $mail->Send();
     }
 }
