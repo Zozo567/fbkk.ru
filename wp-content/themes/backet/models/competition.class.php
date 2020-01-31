@@ -497,9 +497,23 @@ class Competition {
         // for pagination
         $start_count = !empty($_GET['p']) ? $_GET['p'] * $count_requests : 0;
 
-        $count_all_requests = Basket::getCountAllNotesInTable('fbkk_request_list');
+        $where = [];
 
-        $sql = "SELECT * FROM fbkk_request_list ORDER BY `ID` DESC LIMIT $start_count, $count_requests";
+        // filters
+        if( !empty($_GET['request']['Status']) )
+            $where[] = " AND Status = {$_GET['request']['Status']}";
+
+        if( !empty($_GET['request']['Cid']) )
+            $where[] = " AND Cid = {$_GET['request']['Cid']}";
+
+        if( !empty($_GET['request']['YearBorn']) )
+            $where[] = " AND YearBorn = {$_GET['request']['YearBorn']}";
+
+        $count_all_requests = Basket::getCountAllNotesInTable('fbkk_request_list', $where);
+
+        $where_string = implode(" ", $where);
+
+        $sql = "SELECT * FROM fbkk_request_list WHERE 1=1 $where_string ORDER BY `ID` DESC LIMIT $start_count, $count_requests";
 
         $query = $wpdb->get_results($sql, ARRAY_A);
 
@@ -631,11 +645,14 @@ class Competition {
         return current($query);
     }
 
-    static function getCompetitionName( $Cid, $YearBorn )
+    static function getCompetitionName( $Cid, $YearBorn = false )
     {
         $competition = get_post($Cid);
 
-        $return = $competition->post_title .' - '. $YearBorn .'г.р.';
+        $return = $competition->post_title;
+        
+        if( !empty($YearBorn) )
+            $return .= ' - '. $YearBorn .'г.р.';
 
         return $return;
     }
@@ -717,5 +734,43 @@ class Competition {
         }
 
         return ['status' => true];
+    }
+
+    static function getExistsCid()
+    {
+        global $wpdb;
+
+        $competition_data = [];
+
+        $sql = "SELECT * FROM fbkk_request_list";
+
+        $query = $wpdb->get_results($sql, ARRAY_A);
+
+        // array competitions names
+        foreach( $query as $item ){
+            if( empty($competition_data[$item['Cid']]) )
+                $competition_data[$item['Cid']] = Competition::getCompetitionName( $item['Cid'] );
+        }
+
+        return $competition_data;
+    }
+
+    static function getExistsYearBorn()
+    {
+        global $wpdb;
+
+        $competition_data = [];
+
+        $sql = "SELECT * FROM fbkk_request_list";
+
+        $query = $wpdb->get_results($sql, ARRAY_A);
+
+        // array competitions players year born
+        foreach( $query as $item ){
+            if( empty($competition_data[$item['YearBorn']]) )
+                $competition_data[$item['YearBorn']] = $item['YearBorn'];
+        }
+
+        return $competition_data;
     }
 }

@@ -4,6 +4,35 @@
     <form class="form-filter-requests-list">
         <input type="hidden" name="page" value="admin_help">
         <input type="hidden" name="p" value="0">
+        <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-3">
+                <select class="form-control changing-status-request width-height-100" name="request[Status]">
+                    <option value="">Статус заявки</option>
+                    <?php foreach(Basket::getStatusRequestList() as $k => $it){ ?>
+                        <option value="<?=$k?>" <?=!empty($_GET['request']['Status']) && $k == $_GET['request']['Status'] ? 'selected' : '' ?>><?=$it?></option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-3">
+                <select class="form-control changing-status-request width-height-100" name="request[Cid]">
+                    <option value="">Название соревнований</option>
+                    <?php foreach(Competition::getExistsCid() as $k => $it){ ?>
+                        <option value="<?=$k?>" <?=!empty($_GET['request']['Cid']) && $k == $_GET['request']['Cid'] ? 'selected' : '' ?>><?=$it?></option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-3">
+                <select class="form-control changing-status-request width-height-100" name="request[YearBorn]">
+                    <option value="">Год рождения</option>
+                    <?php foreach(Competition::getExistsYearBorn() as $k => $it){ ?>
+                        <option value="<?=$k?>" <?=!empty($_GET['request']['YearBorn']) && $k == $_GET['request']['YearBorn'] ? 'selected' : '' ?>><?=$it?></option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-3">
+                <button class="btn btn-info width-height-100">Применить фильтр</button>
+            </div>
+        </div>
     </form>
     <table class="table form-table">
         <thead>
@@ -178,6 +207,11 @@ jQuery('body').on('click', '.go-to-current-page', function(e){
 </script>
 
 <style>
+
+    .width-height-100 {
+        width: 100% !important;
+        height: 100% !important;
+    }
 
     .form-table th {
         text-align: center !important;

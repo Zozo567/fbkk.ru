@@ -252,11 +252,14 @@ class Basket {
         return $list;
     }
 
-    static function getCountAllNotesInTable( $table )
+    static function getCountAllNotesInTable( $table, $where = false )
     {
         global $wpdb;
 
-        $sql = "SELECT count(*) FROM $table";
+        if( !empty($where) )
+            $where_string = implode(" ", $where);
+
+        $sql = "SELECT count(*) FROM $table WHERE 1=1 $where_string";
 
         $count = current($wpdb->get_results($sql, ARRAY_A));
 
