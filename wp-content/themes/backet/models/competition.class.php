@@ -686,7 +686,7 @@ class Competition {
         $mail->FromName = "no-reply@fbkk.ru";
 
         if( empty($email_to) )
-            $email_to = 'nik-kit-tuk@mail.ru'; // TODO: replace this test email to stat@lokobasket.com
+            $email_to = 'stat@lokobasket.com';
 
         $mail->addAddress($email_to);
             
