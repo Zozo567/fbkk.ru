@@ -41,6 +41,22 @@ class Document {
 
         $Posts = query_posts($arguments);
         $count_posts = count($Posts);
+
+        $documents_types = [
+            'regulations' => 'Положения и регламенты',
+            'constituent' => 'Учредительные',
+            'dlya-sudey' => 'Для судей',
+            'dlya-trenirov' => 'Для тренеров',
+            'drugie' => 'Другие'
+        ];
+
+        $dosuments_arr = [];
+
+        foreach( $Posts as $key => $post ) { 
+            $dosuments_arr += [
+                get_field('document_type', $post->ID) => get_field('documents_info', $post->ID)
+            ];
+        }
         
         ob_start();
         if( !isset($_POST['offset']) || empty($_POST['offset']) ) { ?>
@@ -61,37 +77,29 @@ class Document {
         <div class="competition-type-menu-wraper">
             <div class="competition-type-menu">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="constituent-tab" data-toggle="tab" href="#constituent" role="tab" aria-controls="constituent" aria-selected="true">Учредительные</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="dlya-sudey-tab" data-toggle="tab" href="#dlya-sudey" role="tab" aria-controls="dlya-sudey" aria-selected="false">Для судей</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="dlya-trenirov-tab" data-toggle="tab" href="#dlya-trenirov" role="tab" aria-controls="dlya-trenirov" aria-selected="false">Для тренеров</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="drugie-tab" data-toggle="tab" href="#drugie" role="tab" aria-controls="drugie" aria-selected="false">Другие</a>
-                    </li>
+                    <?php foreach( $documents_types as $documents_key => $documents_val ){ ?>
+                        <li class="nav-item">
+                            <a class="nav-link <?= $documents_key == 'regulations' ? 'active' : ''?>" id="<?=$documents_key?>-tab" data-toggle="tab" href="#<?=$documents_key?>" role="tab" aria-controls="<?=$documents_key?>" aria-selected="<?= $documents_key == 'regulations' ? 'true' : ''?>"><?=$documents_val?></a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>
 
         <div class="tab-content" id="myTabContent">
 
-            <?php foreach( $Posts as $key => $post ) { 
+            <?php foreach( $documents_types as $documents_key => $documents_val ){ 
                 
-                $post_meta['documents_info'] = get_field('documents_info', $post->ID);
-                $post_meta['document_type'] = get_field('document_type', $post->ID); ?>
-
-            <div class="tab-pane faden <?=$post_meta['document_type'] == 'constituent' ? 'show active in' : ''?>" id="<?=$post_meta['document_type']?>" role="tabpanel" aria-labelledby="<?=$post_meta['document_type']?>-tab">
+                $documents_val = !empty($dosuments_arr[$documents_key]) ? $dosuments_arr[$documents_key] : [];
+                ?>
+            <div class="tab-pane faden <?=$documents_key == 'regulations' ? 'show active in' : ''?>" id="<?=$documents_key?>" role="tabpanel" aria-labelledby="<?=$documents_key?>-tab">
                 <div class="federation-wrapper">
                     <?php
-                    if( isset($post_meta['documents_info']) && !empty($post_meta['documents_info']) ){ ?>
+                    if( isset($documents_val) && !empty($documents_val) ){ ?>
                         <table class="table">
                             <?php 
-                         if( !empty($post_meta['documents_info'][0]['path']) ){    
-                            foreach( $post_meta['documents_info'] as $item ) { ?>
+                        if( !empty($documents_val[0]['path']) ){    
+                            foreach( $documents_val as $item ) { ?>
                             <tr>
                                 <td width="80%" class="col-main-block">
                                     <?php
@@ -105,32 +113,28 @@ class Document {
                                     <br><br>
                                     <span class="document_type_label"><?=explode('/', $item['path']['mime_type'])[1]?></span>
                                 </td>
-                                <!-- <td><a class="btn btn_print_document" href="<?=$item['path']['url']?>" target="_blank">Скачать</a></td> -->
                                 <td>
                                     <a class="all-news" href="<?=$item['path']['url']?>" target="_blank">
-                                        <button class="btn_learn_more">
+                                        <button class="btn_learn_more"> 
                                             Скачать
                                         </button>
                                     </a>
                                 </td>
                             </tr>
                             <?php }
-                         } else { ?>
-<div style="margin-top: 30px;">
-<?php $category = 'document';
-
-echo Basket::getPlug( $category );?>
-
-</div>
-<?php } ?>
+                        } else { ?>
+                            <div style="margin-top: 30px;">
+                                <?php 
+                                echo Basket::getPlug( 'document' );
+                                ?>
+                            </div>
+                        <?php } ?>
                         </table>
                     <?php } else { ?>
                         <div style="margin-top: 30px;">
-                            <!-- <span class="document_name_label">Документов не загружено</span> -->
-                            <?php $category = 'document';
-
-                            echo Basket::getPlug( $category );?>
-
+                            <?php 
+                            echo Basket::getPlug( 'document' );
+                            ?>
                         </div>
                     <?php } ?>
                 </div>
