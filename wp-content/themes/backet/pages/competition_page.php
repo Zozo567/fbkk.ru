@@ -168,6 +168,7 @@ $competition_registration = get_field('registration', $competition_id);
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <button type="submit" class="btn btn-default">Отправить заявку</button>
                                 </div>
+                                <img class="loader-gif" style="display: none; float: right:" src="<?php echo get_template_directory_uri(); ?>/assets/images/load.gif" alt="Пример" width="40" height="40">
                             </div>
                         </form>
                     </div>

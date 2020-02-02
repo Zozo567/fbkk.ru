@@ -53,13 +53,14 @@
                     <td><?=Basket::formatPhoneNumber( $item['user']['Phone'] )?></td>
                     <td><?=$item['user']['Email']?></td>
                     <td>
-                        <form data-url="<?php echo admin_url("admin-ajax.php") ?>" data-href="Competition/changeStatusRequest">
+                        <form class="changing-status-request-form" data-url="<?php echo admin_url("admin-ajax.php") ?>" data-href="Competition/changeStatusRequest">
                             <input type="hidden" name="request[ID]" value="<?=$item['ID']?>">
                             <select class="form-control changing-status-request" name="request[Status]">
                                 <?php foreach(Basket::getStatusRequestList() as $k => $it){ ?>
                                     <option value=<?=$k?> <?=$k == $item['Status'] ? 'selected' : '' ?>><?=$it?></option>
                                 <?php } ?>
                             </select>
+                            <img class="loader-gif" style="display: none;" src="<?php echo get_template_directory_uri(); ?>/assets/images/load.gif" alt="Пример" width="20" height="20">
                         </form>
                     </td>
                     <td>
@@ -177,6 +178,8 @@ jQuery('body').on('change', '.changing-status-request', function(e){
     var href = form.data('href');
     var data = form.serialize();
 
+    _this.parents('form.changing-status-request-form').find('.loader-gif').css('display', 'block');
+
     jQuery.ajax({
         url: url,
         data: "action=basket&href=" + href + "&" + data,
@@ -184,6 +187,7 @@ jQuery('body').on('change', '.changing-status-request', function(e){
         dataType: "json",
         success: function(res){
             if( res.status == true ){
+                _this.parents('form.changing-status-request-form').find('.loader-gif').css('display', 'none');
                 window.location.reload();
             }
         }

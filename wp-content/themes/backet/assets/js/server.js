@@ -451,6 +451,8 @@ jQuery('html,body').ready(function () {
         var href = _this.data('href');
         var data = _this.serialize();
 
+        _this.find('.loader-gif').css('display', 'block');
+
         jQuery.ajax({
             url: url,
             data: "action=basket&href=" + href + "&" + data,
@@ -458,6 +460,7 @@ jQuery('html,body').ready(function () {
             dataType: "json",
             success: function(res){
                 if( res.status == true ){
+                    _this.find('.loader-gif').css('display', 'none');
                     window.location.reload();
                 }
             }
