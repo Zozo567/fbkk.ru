@@ -1250,12 +1250,106 @@ select {
 .calendar-field {
   font-size: 14px !important; }
 
+/* line 72, ../scss/server/_partials/mixinsfold/_competition.scss */
+#requetst_form {
+  padding-top: 25px; }
+  /* line 76, ../scss/server/_partials/mixinsfold/_competition.scss */
+  #requetst_form span.title_form_competition {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px; }
+  /* line 84, ../scss/server/_partials/mixinsfold/_competition.scss */
+  #requetst_form span.title_form_comp {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px; }
+  /* line 92, ../scss/server/_partials/mixinsfold/_competition.scss */
+  #requetst_form .backgr_form_comp {
+    width: 100%;
+    background: #FAFAFA;
+    padding: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px; }
+    /* line 99, ../scss/server/_partials/mixinsfold/_competition.scss */
+    #requetst_form .backgr_form_comp .change_conclusion_team {
+      margin-top: 25px;
+      color: rgba(0, 0, 0, 0.5); }
+    /* line 104, ../scss/server/_partials/mixinsfold/_competition.scss */
+    #requetst_form .backgr_form_comp .form_comprtition_text {
+      font-family: "IBM Plex Sans";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      margin-bottom: 10px;
+      margin-top: 25px; }
+    /* line 114, ../scss/server/_partials/mixinsfold/_competition.scss */
+    #requetst_form .backgr_form_comp .list_of {
+      font-family: "IBM Plex Sans";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      color: #DCDCDC;
+      text-align: center;
+      padding-bottom: 15px; }
+    /* line 125, ../scss/server/_partials/mixinsfold/_competition.scss */
+    #requetst_form .backgr_form_comp .add-to-list-request {
+      margin-top: 25px;
+      width: 100%;
+      height: 48px;
+      color: #00a3e3 !important;
+      font-size: 15px;
+      font-family: "IBM Plex Sans";
+      text-transform: uppercase;
+      line-height: 1.2;
+      cursor: default;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #00a3e3;
+      background-color: #fff;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 5px;
+      padding-bottom: 5px; }
+  /* line 146, ../scss/server/_partials/mixinsfold/_competition.scss */
+  #requetst_form .send_form {
+    margin-bottom: 25px;
+    width: 100%;
+    height: 48px;
+    color: #00a3e3 !important;
+    font-size: 15px;
+    font-family: "IBM Plex Sans";
+    text-transform: uppercase;
+    line-height: 1.2;
+    cursor: default;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #00a3e3;
+    background-color: #fff;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px; }
+  /* line 166, ../scss/server/_partials/mixinsfold/_competition.scss */
+  #requetst_form .info_point {
+    padding-top: 10px;
+    line-height: 20px; }
+  /* line 171, ../scss/server/_partials/mixinsfold/_competition.scss */
+  #requetst_form .add_bin {
+    text-align: center;
+    vertical-align: middle; }
+
 @media (min-width: 574px) and (max-width: 20000px) {
-  /* line 72, ../scss/server/_partials/mixinsfold/_competition.scss */
+  /* line 178, ../scss/server/_partials/mixinsfold/_competition.scss */
   .mobile-competition-doc {
     display: none; } }
 @media screen and (max-width: 575px) {
-  /* line 79, ../scss/server/_partials/mixinsfold/_competition.scss */
+  /* line 183, ../scss/server/_partials/mixinsfold/_competition.scss */
   .desctop-competition-doc {
     display: none; } }
 /* line 22, ../scss/server/_partials/mixinsfold/_main-page.scss */

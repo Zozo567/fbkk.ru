@@ -68,14 +68,118 @@ select{
 .calendar-field{
     font-size: 14px !important;
 }
+
+#requetst_form{
+
+    padding-top: 25px;
+
+    span.title_form_competition{
+        font-family: "IBM Plex Sans";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 31px;
+    }
+
+    span.title_form_comp{
+        font-family: "IBM Plex Sans";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 23px;
+    }
+
+    .backgr_form_comp{
+        width: 100%;
+        background: #FAFAFA;
+        padding: 20px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+
+        .change_conclusion_team{
+            margin-top: 25px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .form_comprtition_text{
+            font-family: "IBM Plex Sans";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 18px;
+            margin-bottom: 10px;
+            margin-top: 25px;
+        }
+
+        .list_of{
+            font-family: "IBM Plex Sans";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 18px;
+            color: #DCDCDC;
+            text-align: center;
+            padding-bottom: 15px;;
+        }
+
+        .add-to-list-request {
+            margin-top: 25px;
+            width: 100%;
+            height: 48px;
+            color: #00a3e3 !important;
+            font-size: 15px;
+            font-family: "IBM Plex Sans";
+            text-transform: uppercase;
+            line-height: 1.2;
+            cursor: default;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #00a3e3;
+            background-color: #fff;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+
+    .send_form{
+        margin-bottom: 25px;
+        width: 100%;
+        height: 48px;
+        color: #00a3e3 !important;
+        font-size: 15px;
+        font-family: "IBM Plex Sans";
+        text-transform: uppercase;
+        line-height: 1.2;
+        cursor: default;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #00a3e3;
+        background-color: #fff;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .info_point{
+        padding-top: 10px;
+        line-height: 20px;
+    }
+
+    .add_bin{
+        text-align: center; 
+        vertical-align: middle;
+    }
+}
+
 @media (min-width: 574px) and (max-width: 20000px) {
     .mobile-competition-doc{
         display: none;
     }
 }
 @media  screen and (max-width: 575px) {
-
-
     .desctop-competition-doc{
         display: none;
     }

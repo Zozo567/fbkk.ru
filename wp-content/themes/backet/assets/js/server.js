@@ -409,21 +409,91 @@ jQuery('html,body').ready(function () {
         var date_born = block_type.find('input[name="' + type + '[0][DateBorn]"]:not([type=hidden])');
         var area = block_type.find('input[name="' + type + '[0][Area]"]:not([type=hidden])');
 
+        // var name_val = name.val();
+        // var second_name_val = second_name.val();
+        // var last_name_val = last_name.val();
+        // var date_born_val = date_born.val();
+        // var area_val = area.val();
+
+        // if( name_val == "" ){
+        //     block_type.find('input[name="' + type + '[0][Name]"]:not([type=hidden])').after('<span="invalid-error">This field is required.</span>');
+        // }
+
+
         block_type.find('#' + type + '-list')
-            .append('<tr>' 
-                + '<td>' + name.val() + ' ' + second_name.val() + ' ' + last_name.val()
-                    + '<input type="hidden" name="' + type + '[' + count_type + '][Name]" value="' + name.val() + '">'
-                    + '<input type="hidden" name="' + type + '[' + count_type + '][SecondName]" value="' + second_name.val() + '">'
-                    + '<input type="hidden" name="' + type + '[' + count_type + '][LastName]" value="' + last_name.val() + '">'
-                +'</td>'
-                + '<td>' + date_born.val()
-                    + '<input type="hidden" name="' + type + '[' + count_type + '][DateBorn]" value="' + date_born.val() + '">'
-                +'</td>'
-                + '<td>' + area.val()
-                    + '<input type="hidden" name="' + type + '[' + count_type + '][Area]" value="' + area.val() + '">'
-                +'</td>'
-                + '<td><a href="" class="request-delete-one-note"><i class="fa fa-trash" aria-hidden="true"></i></a></td>'
-                + '</tr>');
+        .append('<tr>' 
+            + '<td>'
+                + '<div class="row">'
+                    + '<div class="col-lg-4 col-md-4 col-sm-12">'
+                        + '<p class="info_point">' + name.val() + ' ' + second_name.val() + ' ' + last_name.val() + '</p>'
+                        + '<input type="hidden" name="' + type + '[' + count_type + '][Name]" value="' + name.val() + '">'
+                        + '<input type="hidden" name="' + type + '[' + count_type + '][SecondName]" value="' + second_name.val() + '">'
+                        + '<input type="hidden" name="' + type + '[' + count_type + '][LastName]" value="' + last_name.val() + '">'
+                    +'</div>'
+
+                    + '<div class="col-lg-4 col-md-4 col-sm-12">'
+                        + '<p class="info_point">' + date_born.val() + '</p>'
+                        + '<input type="hidden" name="' + type + '[' + count_type + '][DateBorn]" value="' + date_born.val() + '">'
+                    + '</div>'
+
+                    + '<div class="col-lg-4 col-md-4 col-sm-12">'
+                        + '<p class="info_point">'+ area.val() + '</p>'
+                        + '<input type="hidden" name="' + type + '[' + count_type + '][Area]" value="' + area.val() + '">'
+                    + '</div>'
+
+                + '</div>'
+
+            + '<td>'
+
+            + '<td class="add_bin">'
+                + '<a href="" class="request-delete-one-note"><i class="fa fa-trash" aria-hidden="true" style="color:#00A3E3;"></i></a>'
+            + '</td>'
+            + '</tr>');
+            // .append('<tr>'
+            // // + '<td>'
+            // //     + '<div class="row">'
+            // //         + '<div class="col-lg-4 col-md-4 col-sm-12">'
+            // //             + '<p class="info_point">' + name.val() + ' ' + second_name.val() + ' ' + last_name.val() + '</p>'
+            // //             + '<input type="hidden" name="' + type + '[' + count_type + '][Name]" value="' + name.val() + '">'
+            // //             + '<input type="hidden" name="' + type + '[' + count_type + '][SecondName]" value="' + second_name.val() + '">'
+            // // //             + '<input type="hidden" name="' + type + '[' + count_type + '][LastName]" value="' + last_name.val() + '">'
+            // // //         +'</div>'
+
+            // // //         + '<div class="col-lg-4 col-md-4 col-sm-12">'
+            // // //             + '<p class="info_point">' + + date_born.val() + '</p>'
+            // // //             + '<input type="hidden" name="' + type + '[' + count_type + '][DateBorn]" value="' + date_born.val() + '">'
+            // // //         + '</div>'
+
+            // // //         + '<div class="col-lg-4 col-md-4 col-sm-12">'
+            // // //             + '<p class="info_point">'+ area.val() + '</p>'
+            // // //             + '<input type="hidden" name="' + type + '[' + count_type + '][Area]" value="' + area.val() + '">'
+            // // //         + '</div>'
+
+            // // //     + '</div>'
+
+            // // // + '<td>'
+
+            // // // + '<td class="add_bin">'
+            // // //     + '<a href="" class="request-delete-one-note"><i class="fa fa-trash" aria-hidden="true" style="color:#00A3E3;"></i></a>'
+            // // // + '</td>'
+            // _+ '</tr>');
+
+            // .append('<tr>' 
+            // + '<td>' + name.val() + ' ' + second_name.val() + ' ' + last_name.val()
+            //     + '<input type="hidden" name="' + type + '[' + count_type + '][Name]" value="' + name.val() + '">'
+            //     + '<input type="hidden" name="' + type + '[' + count_type + '][SecondName]" value="' + second_name.val() + '">'
+            //     + '<input type="hidden" name="' + type + '[' + count_type + '][LastName]" value="' + last_name.val() + '">'
+            // +'</td>'
+            // + '<td>' + date_born.val()
+            //     + '<input type="hidden" name="' + type + '[' + count_type + '][DateBorn]" value="' + date_born.val() + '">'
+            // +'</td>'
+            // + '<td>' + area.val()
+            //     + '<input type="hidden" name="' + type + '[' + count_type + '][Area]" value="' + area.val() + '">'
+            // +'</td>'
+            // + '<td><a href="" class="request-delete-one-note"><i class="fa fa-trash" aria-hidden="true" style="color:#00A3E3;"></i></a></td>'
+            // + '</tr>');
+
+            
         
         name.val('');
         second_name.val('');
