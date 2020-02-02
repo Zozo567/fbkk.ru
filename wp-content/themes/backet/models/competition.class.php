@@ -708,7 +708,7 @@ class Competition {
 
             global $wpdb;
 
-            $request_data = self::getRequestListToCompetition()[$input_data['request']['ID']];
+            $request_data = self::getRequestListToCompetition()['requests_list'][$input_data['request']['ID']];
 
             $update_data = [
                 'Status' => $input_data['request']['Status']
