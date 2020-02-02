@@ -220,35 +220,6 @@ $competition_registration = get_field('registration', $competition_id);
 								<div class="row">
 									<div class="col-lg-12 col-md-12 col-sm-12">
                                         <table class="table table-striped" id="player-list">
-										<!-- <tbody>
-											<tr>
-												<td>
-													<div class="row">
-														<div class="col-lg-4 col-md-4 col-sm-12">
-															<p class="info_point">Золотарев Михаил Иванович</p>
-															<input type="hidden" name="trainer[2][Name]" value=".,jkmjnhbgvf">
-															<input type="hidden" name="trainer[2][SecondName]" value="mcnbgvfcd">
-															<input type="hidden" name="trainer[2][LastName]" value="/.klj,khmjnhbgfv">
-														</div>
-														<div class="col-lg-4 col-md-4 col-sm-12">
-															<p class="info_point">
-																02.08.1996
-																<input type="hidden" name="trainer[2][DateBorn]" value="98.76.5432">
-															</p>
-														</div>
-														<div class="col-lg-4 col-md-4 col-sm-12">
-															<p class="info_point">
-																ЧМР
-															</p>
-															<input type="hidden" name="trainer[2][Area]" value="lkjghgfds">
-														</div>
-													</div>
-												</td>
-												<td class="add_bin">
-													<a href="" class="request-delete-one-note"><i class="fa fa-trash" aria-hidden="true" style="color:#00A3E3;"></i></a>
-												</td>
-											</tr>
-										</tbody> -->
                                         </table>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
