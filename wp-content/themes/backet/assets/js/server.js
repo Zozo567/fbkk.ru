@@ -514,10 +514,19 @@ jQuery('html,body').ready(function () {
             success: function(res){
                 if( res.status == true ){
                     _this.find('.loader-gif').css('display', 'none');
-                    window.location.reload();
+                    _this.find('.form-request-fields').empty();
+                    _this.find('.form-request-fields-answer').css('display', 'block');
+                    // window.location.reload();
                 }
             }
         });
+    });
+
+    jQuery('body').on('click', '.button-custom-reload', function(e){
+
+        e.preventDefault();
+
+        window.location.reload();
     });
 
     $( "div.mouse-hover-class-check" ).mouseover(function() {
