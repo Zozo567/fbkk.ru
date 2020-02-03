@@ -773,4 +773,21 @@ class Competition {
 
         return $competition_data;
     }
+
+    static function deleteRequest( $request_id = false )
+    {
+        $input_data = $_POST;
+
+        if( empty($request_id) )
+            $request_id = (int) $input_data['request_id'];
+
+        global $wpdb;
+
+        $wpdb->delete( 'fbkk_request_list', ['ID' => $request_id] );
+        $wpdb->delete( 'fbkk_request_users', ['Hid' => $request_id] );
+        $wpdb->delete( 'fbkk_request_players', ['Hid' => $request_id] );
+        $wpdb->delete( 'fbkk_request_trainers', ['Hid' => $request_id] );
+
+        return ['status' => true];
+    }
 }

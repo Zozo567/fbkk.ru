@@ -65,6 +65,9 @@ function function_call(){
 		case "Competition/changeStatusRequest" :
 			$return = Competition::changeStatusRequest();
 			break;
+		case "Competition/deleteRequest" :
+			$return = Competition::deleteRequest();
+			break;
 	}
 
 	echo json_encode($return);

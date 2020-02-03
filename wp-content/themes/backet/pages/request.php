@@ -1,5 +1,5 @@
-<link href="<?php echo get_template_directory_uri(); ?>/assets/css/bootstrap.min.css?<?=$version?>" rel="stylesheet">
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.min.js?<?=$version?>"></script>
+<link href="<?php echo get_template_directory_uri(); ?>/assets/css/bootstrap.min.css?<?=time()?>" rel="stylesheet">
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.min.js?<?=time()?>"></script>
 <div class="col-lg-12 col-md-12 col-sm-12">
     <form class="form-filter-requests-list">
         <input type="hidden" name="page" value="admin_help">
@@ -43,6 +43,7 @@
                 <th class="text_center">Email</th>
                 <th class="text_center">Статус заявки</th>
                 <th class="text_center"></th>
+                <th class="text_center"></th>
             </tr>
         </thead>
         <tbody>
@@ -63,10 +64,13 @@
                             <img class="loader-gif" style="display: none;" src="<?php echo get_template_directory_uri(); ?>/assets/images/load.gif" alt="Пример" width="20" height="20">
                         </form>
                     </td>
-                    <td>
-                        <a class="" data-toggle="collapse" href="#collapseExample_<?=$item['ID']?>" role="button" aria-expanded="false" aria-controls="collapseExample_<?=$item['ID']?>">
+                    <td class="text_center">
+                        <a class="text_center" data-toggle="collapse" href="#collapseExample_<?=$item['ID']?>" role="button" aria-expanded="false" aria-controls="collapseExample_<?=$item['ID']?>">
                             Подробнее
                         </a>
+                    </td>
+                    <td class="text_center">
+                        <a href="" class="delete-request-button" data-id="<?=$item['ID']?>" data-toggle="modal" data-target="#deleteRequestModal">Удалить</a>
                     </td>
                 </tr>
                 <tr class="collapse" id="collapseExample_<?=$item['ID']?>">
@@ -165,49 +169,108 @@
     <?php } ?>
 </div>
 
+<div class="modal fade" id="deleteRequestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Удаление заявки</h5>
+                <img class="loader-gif" style="display: none;" src="<?php echo get_template_directory_uri(); ?>/assets/images/load.gif" alt="Пример" width="20" height="20">
+            </div>
+            <div class="modal-body">
+                Вы действительно хотите удалить эту заявку?
+            </div>
+            <div class="modal-footer">
+                <button type="button" 
+                    class="btn btn-danger delete-request" 
+                    data-id=""
+                    data-url="<?php echo admin_url("admin-ajax.php") ?>" 
+                    data-href="Competition/deleteRequest">Удалить</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
-jQuery('body').on('change', '.changing-status-request', function(e){
+    jQuery('body').on('change', '.changing-status-request', function(e){
 
-    e.preventDefault();
+        e.preventDefault();
 
-    var _this = jQuery(this);
+        var _this = jQuery(this);
 
-    var form = _this.parents('form');
+        var form = _this.parents('form');
 
-    var url = form.data('url');
-    var href = form.data('href');
-    var data = form.serialize();
+        var url = form.data('url');
+        var href = form.data('href');
+        var data = form.serialize();
 
-    _this.parents('form.changing-status-request-form').find('.loader-gif').css('display', 'block');
+        _this.parents('form.changing-status-request-form').find('.loader-gif').css('display', 'block');
 
-    jQuery.ajax({
-        url: url,
-        data: "action=basket&href=" + href + "&" + data,
-        type: "POST",
-        dataType: "json",
-        success: function(res){
-            if( res.status == true ){
-                _this.parents('form.changing-status-request-form').find('.loader-gif').css('display', 'none');
-                window.location.reload();
+        jQuery.ajax({
+            url: url,
+            data: "action=basket&href=" + href + "&" + data,
+            type: "POST",
+            dataType: "json",
+            success: function(res){
+                if( res.status == true ){
+                    _this.parents('form.changing-status-request-form').find('.loader-gif').css('display', 'none');
+                    window.location.reload();
+                }
             }
-        }
+        });
     });
-});
 
-jQuery('body').on('click', '.go-to-current-page', function(e){
+    jQuery('body').on('click', '.go-to-current-page', function(e){
 
-    e.preventDefault();
+        e.preventDefault();
 
-    var _this = jQuery(this);
+        var _this = jQuery(this);
 
-    var current_page = _this.data('page');
+        var current_page = _this.data('page');
 
-    var form = jQuery('form.form-filter-requests-list');
+        var form = jQuery('form.form-filter-requests-list');
 
-    form.find('input[name="p"]').val(current_page);
+        form.find('input[name="p"]').val(current_page);
 
-    form.trigger('submit');
-});
+        form.trigger('submit');
+    });
+
+    jQuery('body').on('click', '.delete-request', function(e){
+
+        e.preventDefault();
+
+        var _this = jQuery(this);
+
+        var url = _this.data('url');
+        var href = _this.data('href');
+        var request_id = _this.data('id');
+
+        _this.parents('#deleteRequestModal').find('.loader-gif').css('display', 'block');
+
+        jQuery.ajax({
+            url: url,
+            data: "action=basket&href=" + href + "&request_id=" + request_id,
+            type: "POST",
+            dataType: "json",
+            success: function(res){
+                if( res.status == true ){
+                    _this.parents('#deleteRequestModal').find('.loader-gif').css('display', 'none');
+                    window.location.reload();
+                }
+            }
+        });
+    });
+
+    jQuery('body').on('click', '.delete-request-button', function(e){
+
+        e.preventDefault();
+
+        var request_id = jQuery(this).data('id');
+
+        jQuery('#deleteRequestModal button.delete-request').data('id', request_id);
+
+        jQuery('#deleteRequestModal').modal('show');
+    });
 </script>
 
 <style>
@@ -249,6 +312,10 @@ jQuery('body').on('click', '.go-to-current-page', function(e){
     .pager li > a:focus {
         text-decoration: none;
         background-color: #eee;
+    }
+
+    .text_center {
+        text-align: center;
     }
 
 </style>
