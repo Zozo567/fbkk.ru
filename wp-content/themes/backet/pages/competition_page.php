@@ -117,7 +117,7 @@ $competition_registration = get_field('registration', $competition_id);
                                             <input type="text" class="form-control masked_date" name="player[0][DateBorn]" autocomplete="off">
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6">
-                                            <p class="form_comprtition_text">Район</p>
+                                            <p class="form_comprtition_text">Место рождения</p>
                                             <input type="text" class="form-control" name="player[0][Area]" autocomplete="off">
                                         </div>
                                         <div class="col-lg-3 col-md-12 col-sm-12">
@@ -154,7 +154,7 @@ $competition_registration = get_field('registration', $competition_id);
                                             <input type="text" class="form-control masked_date" name="trainer[0][DateBorn]" autocomplete="off">
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6">
-                                            <p class="form_comprtition_text">Район</p>
+                                            <p class="form_comprtition_text">Место рождения</p>
                                             <input type="text" class="form-control" name="trainer[0][Area]" autocomplete="off">
                                         </div>
                                         <div class="col-lg-3 col-md-12 col-sm-12">
