@@ -76,7 +76,7 @@ function add_help_menu() {
     add_menu_page(
         'Заявки',
         'Заявки',
-        'manage_options',
+        'edit_posts',
         'admin_help',
         'request_list_page',
         'dashicons-editor-help',
