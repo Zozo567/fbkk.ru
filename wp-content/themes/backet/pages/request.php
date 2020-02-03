@@ -49,7 +49,7 @@
             <?php foreach( $data['requests_list'] as $key => $item ){ ?>
                 <tr>
                     <td><?=Competition::getCompetitionName( $item['Cid'], $item['YearBorn'] )?></td>
-                    <td><?=$item['user']['Name'] .' '. $item['user']['SecondName'] .' '. $item['user']['LastName']?></td>
+                    <td><?=$item['user']['SecondName'] .' '. $item['user']['Name'] .' '. $item['user']['LastName']?></td>
                     <td><?=Basket::formatPhoneNumber( $item['user']['Phone'] )?></td>
                     <td><?=$item['user']['Email']?></td>
                     <td>
@@ -75,7 +75,7 @@
                         <table>
                             <?php foreach( $item['players'] as $it ){ ?>
                                 <tr>
-                                    <td><?=$it['Name'] .' '. $it['SecondName'] .' '. $it['LastName']?></td>
+                                    <td><?=$it['SecondName'] .' '. $it['Name'] .' '. $it['LastName']?></td>
                                     <td><?= date("d.m.Y", (int) $it['DateBorn']) ?></td>
                                     <td><?= $it['Area'] ?></td>
                                 </tr>
@@ -87,7 +87,7 @@
                         <table>
                             <?php foreach( $item['trainers'] as $it ){ ?>
                                 <tr>
-                                    <td><?=$it['Name'] .' '. $it['SecondName'] .' '. $it['LastName']?></td>
+                                    <td><?=$it['SecondName'] .' '. $it['Name'] .' '. $it['LastName']?></td>
                                     <td><?= date("d.m.Y", (int) $it['DateBorn']) ?></td>
                                     <td><?= $it['Area'] ?></td>
                                 </tr>
