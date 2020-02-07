@@ -509,6 +509,8 @@ class Competition {
         if( !empty($_GET['request']['YearBorn']) )
             $where[] = " AND YearBorn = {$_GET['request']['YearBorn']}";
 
+        $where[] = " AND Status != 66";
+
         $count_all_requests = Basket::getCountAllNotesInTable('fbkk_request_list', $where);
 
         $where_string = implode(" ", $where);
@@ -783,10 +785,15 @@ class Competition {
 
         global $wpdb;
 
-        $wpdb->delete( 'fbkk_request_list', ['ID' => $request_id] );
-        $wpdb->delete( 'fbkk_request_users', ['Hid' => $request_id] );
-        $wpdb->delete( 'fbkk_request_players', ['Hid' => $request_id] );
-        $wpdb->delete( 'fbkk_request_trainers', ['Hid' => $request_id] );
+        $update_data = [
+            'Status' => 66 // Статус удаленных
+        ];
+
+        $where_update = [
+            'ID' => $request_id
+        ];
+
+        $wpdb->update( 'fbkk_request_list', $update_data, $where_update);
 
         return ['status' => true];
     }
